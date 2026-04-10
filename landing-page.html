@@ -178,6 +178,39 @@
     align-items: center;
     gap: 0.5rem;
   }
+
+  /* === LANGUAGE TOGGLE === */
+  .lang-toggle {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 2px;
+    color: var(--text-muted);
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.3rem 0;
+    display: flex;
+    align-items: center;
+    gap: 0;
+    white-space: nowrap;
+    transition: color 0.2s;
+  }
+  .lang-toggle:hover { color: var(--text-secondary); }
+  .lang-toggle .lang-bracket { color: var(--text-muted); }
+  .lang-toggle .lang-sep { color: var(--text-muted); margin: 0 0.3rem; }
+  .lang-toggle .lang-opt {
+    color: var(--text-muted);
+    transition: color 0.2s;
+  }
+  .lang-toggle .lang-opt.active {
+    color: var(--accent-red);
+    text-shadow: 0 0 8px rgba(230,57,70,0.5);
+  }
+  .lang-toggle:focus-visible {
+    outline: 2px solid var(--accent-blue);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
   .nav-status .dot {
     width: 6px; height: 6px;
     background: var(--accent-blue);
@@ -1008,13 +1041,20 @@ html {
   <div class="container">
     <a href="#" class="nav-logo">HUMEREZ</a>
     <ul class="nav-links" id="navLinks">
-      <li><a href="#about">About</a></li>
-      <li><a href="#stack">Stack</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#beyond">Beyond Code</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a href="#about" data-i18n="nav.about">About</a></li>
+      <li><a href="#stack" data-i18n="nav.stack">Stack</a></li>
+      <li><a href="#projects" data-i18n="nav.projects">Projects</a></li>
+      <li><a href="#beyond" data-i18n="nav.beyond">Beyond Code</a></li>
+      <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
     </ul>
-    <div class="nav-status"><span class="dot"></span> AVAILABLE FOR WORK</div>
+    <div class="nav-status"><span class="dot"></span> <span data-i18n="nav.status">AVAILABLE FOR WORK</span></div>
+    <button class="lang-toggle" id="langToggle" aria-label="Toggle language" title="Toggle language">
+      <span class="lang-bracket">[</span>
+      <span class="lang-opt active" id="langEN">EN</span>
+      <span class="lang-sep">|</span>
+      <span class="lang-opt" id="langES">ES</span>
+      <span class="lang-bracket">]</span>
+    </button>
     <button class="nav-toggle" id="navToggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="navLinks">
       <span></span><span></span><span></span>
     </button>
@@ -1033,28 +1073,28 @@ html {
   <div class="hero-shape hero-shape--3"></div>
   <div class="container">
     <div class="hero-content">
-      <div class="hero-label">System Online — La Paz, Bolivia</div>
+      <div class="hero-label" data-i18n="hero.label">System Online — La Paz, Bolivia</div>
       <h1 class="hero-title">
         DIEGO
         <span class="line-2">HUMEREZ</span>
       </h1>
-      <p class="hero-subtitle">Full-stack software developer building solutions for LATAM businesses. Specializing in .NET, React, and cloud-native architectures — powered by code, curiosity, and too much coffee.</p>
+      <p class="hero-subtitle" data-i18n="hero.subtitle">Full-stack software developer building solutions for LATAM businesses. Specializing in .NET, React, and cloud-native architectures — powered by code, curiosity, and too much coffee.</p>
       <div class="hero-ctas">
-        <a href="#projects" class="btn btn--primary">VIEW PROJECTS</a>
-        <a href="#contact" class="btn btn--secondary">LET'S TALK</a>
+        <a href="#projects" class="btn btn--primary" data-i18n="hero.cta.projects">VIEW PROJECTS</a>
+        <a href="#contact" class="btn btn--secondary" data-i18n="hero.cta.talk">LET'S TALK</a>
       </div>
       <div class="hero-stats">
         <div class="hero-stat">
           <div class="hero-stat-value">5+</div>
-          <div class="hero-stat-label">Years Experience</div>
+          <div class="hero-stat-label" data-i18n="hero.stat.experience">Years Experience</div>
         </div>
         <div class="hero-stat">
           <div class="hero-stat-value">10+</div>
-          <div class="hero-stat-label">Projects Shipped</div>
+          <div class="hero-stat-label" data-i18n="hero.stat.projects">Projects Shipped</div>
         </div>
         <div class="hero-stat">
           <div class="hero-stat-value">US/LATAM</div>
-          <div class="hero-stat-label">Remote Experience</div>
+          <div class="hero-stat-label" data-i18n="hero.stat.remote">Remote Experience</div>
         </div>
       </div>
     </div>
@@ -1065,43 +1105,43 @@ html {
 <section id="about">
   <div class="container">
     <div class="section-header reveal">
-      <div class="section-tag">01 // About</div>
-      <h2 class="section-title">PILOT <span class="accent-red">PROFILE</span></h2>
+      <div class="section-tag" data-i18n="about.tag">01 // About</div>
+      <h2 class="section-title"><span data-i18n="about.title.1">PILOT</span> <span class="accent-red" data-i18n="about.title.2">PROFILE</span></h2>
     </div>
     <div class="about-grid">
       <div class="about-text reveal reveal-delay-1">
-        <p>I'm a <strong>software developer</strong> based in La Paz, Bolivia, working remotely for a US-based company while building my own products targeting <strong>small and medium businesses</strong> across Bolivia and Latin America.</p>
-        <p>I thrive at the intersection of <strong>solid backend architecture</strong> and <strong>polished frontend experiences</strong>. Whether it's designing scalable APIs, building real-time dashboards, or integrating AI pipelines — I ship software that solves real problems.</p>
-        <p>When I'm not coding, you'll find me building Gundam model kits, climbing through competitive Dota 2 matches, exploring new cuisines, or planning my next travel adventure. I believe the best developers bring <strong>diverse perspectives</strong> to their craft.</p>
+        <p data-i18n="about.p1">I'm a <strong>software developer</strong> based in La Paz, Bolivia, working remotely for a US-based company while building my own products targeting <strong>small and medium businesses</strong> across Bolivia and Latin America.</p>
+        <p data-i18n="about.p2">I thrive at the intersection of <strong>solid backend architecture</strong> and <strong>polished frontend experiences</strong>. Whether it's designing scalable APIs, building real-time dashboards, or integrating AI pipelines — I ship software that solves real problems.</p>
+        <p data-i18n="about.p3">When I'm not coding, you'll find me building Gundam model kits, climbing through competitive Dota 2 matches, exploring new cuisines, or planning my next travel adventure. I believe the best developers bring <strong>diverse perspectives</strong> to their craft.</p>
       </div>
       <div class="about-details reveal reveal-delay-2">
         <div class="about-detail-row">
-          <span class="about-detail-key">Name</span>
+          <span class="about-detail-key" data-i18n="about.key.name">Name</span>
           <span class="about-detail-val">Diego Humerez</span>
         </div>
         <div class="about-detail-row">
-          <span class="about-detail-key">Location</span>
+          <span class="about-detail-key" data-i18n="about.key.location">Location</span>
           <span class="about-detail-val">La Paz, Bolivia</span>
         </div>
         <div class="about-detail-row">
-          <span class="about-detail-key">Brand</span>
+          <span class="about-detail-key" data-i18n="about.key.brand">Brand</span>
           <span class="about-detail-val accent-red">humerez.dev</span>
         </div>
         <div class="about-detail-row">
-          <span class="about-detail-key">Focus</span>
-          <span class="about-detail-val">Full-Stack / SaaS</span>
+          <span class="about-detail-key" data-i18n="about.key.focus">Focus</span>
+          <span class="about-detail-val" data-i18n="about.val.focus">Full-Stack / SaaS</span>
         </div>
         <div class="about-detail-row">
-          <span class="about-detail-key">Markets</span>
-          <span class="about-detail-val">US Remote + LATAM</span>
+          <span class="about-detail-key" data-i18n="about.key.markets">Markets</span>
+          <span class="about-detail-val" data-i18n="about.val.markets">US Remote + LATAM</span>
         </div>
         <div class="about-detail-row">
-          <span class="about-detail-key">Languages</span>
-          <span class="about-detail-val">English & Spanish</span>
+          <span class="about-detail-key" data-i18n="about.key.languages">Languages</span>
+          <span class="about-detail-val" data-i18n="about.val.languages">English & Spanish</span>
         </div>
         <div class="about-detail-row">
-          <span class="about-detail-key">Status</span>
-          <span class="about-detail-val accent-blue">Available</span>
+          <span class="about-detail-key" data-i18n="about.key.status">Status</span>
+          <span class="about-detail-val accent-blue" data-i18n="about.val.status">Available</span>
         </div>
       </div>
     </div>
@@ -1112,8 +1152,8 @@ html {
 <section id="stack" style="background: var(--bg-secondary);">
   <div class="container">
     <div class="section-header reveal">
-      <div class="section-tag">02 // Arsenal</div>
-      <h2 class="section-title">TECH <span class="accent-red">STACK</span></h2>
+      <div class="section-tag" data-i18n="stack.tag">02 // Arsenal</div>
+      <h2 class="section-title"><span data-i18n="stack.title.1">TECH</span> <span class="accent-red" data-i18n="stack.title.2">STACK</span></h2>
     </div>
     <div class="tech-grid reveal reveal-delay-1">
       <div class="tech-item" data-level="Advanced">.NET / C#</div>
@@ -1140,87 +1180,87 @@ html {
 <section id="projects">
   <div class="container">
     <div class="section-header reveal">
-      <div class="section-tag">03 // Deployments</div>
-      <h2 class="section-title">FEATURED <span class="accent-red">PROJECTS</span></h2>
+      <div class="section-tag" data-i18n="projects.tag">03 // Deployments</div>
+      <h2 class="section-title"><span data-i18n="projects.title.1">FEATURED</span> <span class="accent-red" data-i18n="projects.title.2">PROJECTS</span></h2>
     </div>
     <div class="projects-grid">
 
       <div class="project-card reveal reveal-delay-1" data-url="#">
         <div class="project-card-header">
           <span class="project-number">PRJ—001</span>
-          <span class="project-status project-status--dev">In Dev</span>
+          <span class="project-status project-status--dev" data-i18n="project.status.dev">In Dev</span>
         </div>
         <h3 class="project-title">Condo Manager</h3>
-        <p class="project-desc">Residential building management platform for the Bolivian market. Expense tracking, unit management, common areas booking — built for condominiums and property admins across LATAM.</p>
+        <p class="project-desc" data-i18n="project.condo.desc">Residential building management platform for the Bolivian market. Expense tracking, unit management, common areas booking — built for condominiums and property admins across LATAM.</p>
         <div class="project-tags">
           <span class="project-tag">.NET</span>
           <span class="project-tag">React</span>
           <span class="project-tag">PostgreSQL</span>
           <span class="project-tag">SaaS</span>
         </div>
-        <a href="#" class="project-link" aria-label="Learn more about Condo Manager">Learn More</a>
+        <a href="#" class="project-link" aria-label="Learn more about Condo Manager" data-i18n="project.link.more">Learn More</a>
       </div>
 
       <div class="project-card reveal reveal-delay-2" data-url="#">
         <div class="project-card-header">
           <span class="project-number">PRJ—002</span>
-          <span class="project-status project-status--concept">Concept</span>
+          <span class="project-status project-status--concept" data-i18n="project.status.concept">Concept</span>
         </div>
         <h3 class="project-title">Restaurant Hub</h3>
-        <p class="project-desc">End-to-end restaurant management web app — table status, order tracking, kitchen display, digital receipts. SIN tax compliance integration as a key differentiator for the Bolivian market.</p>
+        <p class="project-desc" data-i18n="project.restauranthub.desc">End-to-end restaurant management web app — table status, order tracking, kitchen display, digital receipts. SIN tax compliance integration as a key differentiator for the Bolivian market.</p>
         <div class="project-tags">
           <span class="project-tag">React</span>
           <span class="project-tag">Node.js</span>
           <span class="project-tag">Real-time</span>
           <span class="project-tag">SIN</span>
         </div>
-        <a href="#" class="project-link" aria-label="Learn more about Restaurant Hub">Learn More</a>
+        <a href="#" class="project-link" aria-label="Learn more about Restaurant Hub" data-i18n="project.link.more">Learn More</a>
       </div>
 
       <div class="project-card reveal reveal-delay-3" data-url="#">
         <div class="project-card-header">
           <span class="project-number">PRJ—003</span>
-          <span class="project-status project-status--concept">Concept</span>
+          <span class="project-status project-status--concept" data-i18n="project.status.concept">Concept</span>
         </div>
         <h3 class="project-title">LexBolivia</h3>
-        <p class="project-desc">WhatsApp-based Bolivian legal intelligence platform. RAG pipelines, daily scraping of the Gaceta Oficial, and AI-powered legal queries accessible via the most popular messaging app in Bolivia.</p>
+        <p class="project-desc" data-i18n="project.lexbolivia.desc">WhatsApp-based Bolivian legal intelligence platform. RAG pipelines, daily scraping of the Gaceta Oficial, and AI-powered legal queries accessible via the most popular messaging app in Bolivia.</p>
         <div class="project-tags">
           <span class="project-tag">Claude API</span>
           <span class="project-tag">RAG</span>
           <span class="project-tag">WhatsApp</span>
           <span class="project-tag">Python</span>
         </div>
-        <a href="#" class="project-link" aria-label="Learn more about LexBolivia">Learn More</a>
+        <a href="#" class="project-link" aria-label="Learn more about LexBolivia" data-i18n="project.link.more">Learn More</a>
       </div>
 
       <div class="project-card reveal reveal-delay-4" data-url="https://humerez.dev/restaurant/login">
         <div class="project-card-header">
           <span class="project-number">PRJ—004</span>
-          <span class="project-status project-status--live">Live</span>
+          <span class="project-status project-status--live" data-i18n="project.status.live">Live</span>
         </div>
-        <h3 class="project-title">Restaurant POS</h3>
-        <p class="project-desc">Comprehensive tenant administration solution with service catalogs, BOB-denominated pricing, and automated management workflows for property administrators in Bolivia.</p>
+        <h3 class="project-title">Restaurant Hub</h3>
+        <p class="project-desc" data-i18n="project.restaurantpos.desc">Comprehensive tenant administration solution with service catalogs, BOB-denominated pricing, and automated management workflows for property administrators in Bolivia.</p>
         <div class="project-tags">
           <span class="project-tag">.NET</span>
           <span class="project-tag">React</span>
           <span class="project-tag">SQL Server</span>
         </div>
-        <a href="https://humerez.dev/restaurant/login" class="project-link" target="_blank" rel="noopener noreferrer" aria-label="View Restaurant POS project">View Project</a>
+        <a href="https://humerez.dev/restaurant/login" class="project-link" target="_blank" rel="noopener noreferrer" aria-label="View Restaurant POS project" data-i18n="project.link.view">View Project</a>
       </div>
 
       <div class="project-card reveal reveal-delay-1" data-url="https://humerez.dev/receipts/login">
         <div class="project-card-header">
           <span class="project-number">PRJ—005</span>
-          <span class="project-status project-status--live">Live</span>
+          <span class="project-status project-status--live" data-i18n="project.status.live">Live</span>
         </div>
-        <h3 class="project-title">Debt & Receipts Tracker</h3>
-        <p class="project-desc">Personal and small-business debt tracking platform with digital receipt storage. Log who owes what, attach receipts as proof, and keep a clear ledger of pending and settled debts — all in one place.</p>
+        <h3 class="project-title" data-i18n="project.receipts.title">Debt & Receipts Tracker</h3>
+        <p class="project-desc" data-i18n="project.receipts.desc">Personal and small-business debt tracking platform with digital receipt storage. Log who owes what, attach receipts as proof, and keep a clear ledger of pending and settled debts — all in one place.</p>
         <div class="project-tags">
           <span class="project-tag">React</span>
           <span class="project-tag">Node.js</span>
           <span class="project-tag">PostgreSQL</span>
         </div>
-        <a href="https://humerez.dev/receipts/login" class="project-link" target="_blank" rel="noopener noreferrer" aria-label="View Debt & Receipts Tracker project">View Project</a>
+        <a href="https://humerez.dev/receipts/login" class="project-link" target="_blank" rel="noopener noreferrer" aria-label="View Debt & Receipts Tracker project" data-i18n="project.link.view">View Project</a>
       </div>
 
     </div>
@@ -1231,29 +1271,29 @@ html {
 <section id="beyond" style="background: var(--bg-secondary);">
   <div class="container">
     <div class="section-header reveal">
-      <div class="section-tag">04 // Off-Duty</div>
-      <h2 class="section-title">BEYOND <span class="accent-red">CODE</span></h2>
+      <div class="section-tag" data-i18n="beyond.tag">04 // Off-Duty</div>
+      <h2 class="section-title"><span data-i18n="beyond.title.1">BEYOND</span> <span class="accent-red" data-i18n="beyond.title.2">CODE</span></h2>
     </div>
     <div class="interests-grid">
       <div class="interest-card reveal reveal-delay-1">
         <span class="interest-icon">🤖</span>
-        <div class="interest-label">Gunpla</div>
-        <div class="interest-sub">Model Kit Builder</div>
+        <div class="interest-label" data-i18n="beyond.gunpla.label">Gunpla</div>
+        <div class="interest-sub" data-i18n="beyond.gunpla.sub">Model Kit Builder</div>
       </div>
       <div class="interest-card reveal reveal-delay-2">
         <span class="interest-icon">🎮</span>
-        <div class="interest-label">Gaming</div>
-        <div class="interest-sub">Dota 2 · CS2 · EA FC</div>
+        <div class="interest-label" data-i18n="beyond.gaming.label">Gaming</div>
+        <div class="interest-sub" data-i18n="beyond.gaming.sub">Dota 2 · CS2 · EA FC</div>
       </div>
       <div class="interest-card reveal reveal-delay-3">
         <span class="interest-icon">✈️</span>
-        <div class="interest-label">Travel</div>
-        <div class="interest-sub">Explorer</div>
+        <div class="interest-label" data-i18n="beyond.travel.label">Travel</div>
+        <div class="interest-sub" data-i18n="beyond.travel.sub">Explorer</div>
       </div>
       <div class="interest-card reveal reveal-delay-4">
         <span class="interest-icon">🍜</span>
-        <div class="interest-label">Food</div>
-        <div class="interest-sub">Always Hungry</div>
+        <div class="interest-label" data-i18n="beyond.food.label">Food</div>
+        <div class="interest-sub" data-i18n="beyond.food.sub">Always Hungry</div>
       </div>
     </div>
   </div>
@@ -1262,9 +1302,9 @@ html {
 <!-- CONTACT -->
 <section id="contact" class="contact-section">
   <div class="container">
-    <div class="section-tag reveal" style="justify-content: center;">05 // Comms</div>
-    <h2 class="contact-headline reveal reveal-delay-1">LET'S <span class="accent-red">BUILD</span> SOMETHING</h2>
-    <p class="contact-sub reveal reveal-delay-2">Available for full-time remote positions, freelance projects, and SaaS collaborations across US and LATAM markets.</p>
+    <div class="section-tag reveal" style="justify-content: center;" data-i18n="contact.tag">05 // Comms</div>
+    <h2 class="contact-headline reveal reveal-delay-1"><span data-i18n="contact.headline.1">LET'S</span> <span class="accent-red" data-i18n="contact.headline.2">BUILD</span> <span data-i18n="contact.headline.3">SOMETHING</span></h2>
+    <p class="contact-sub reveal reveal-delay-2" data-i18n="contact.sub">Available for full-time remote positions, freelance projects, and SaaS collaborations across US and LATAM markets.</p>
     <div class="contact-links reveal reveal-delay-3">
       <a href="mailto:diego@humerez.dev" class="contact-link" aria-label="Send email to Diego Humerez">Email</a>
       <a href="https://github.com/dhumerez" class="contact-link" target="_blank" rel="noopener noreferrer" aria-label="Diego Humerez on GitHub">GitHub</a>
@@ -1273,20 +1313,21 @@ html {
     </div>
     <form class="contact-form reveal reveal-delay-4" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" novalidate>
       <div class="form-group">
-        <label for="contact-name" class="form-label">[ NAME ]</label>
+        <label for="contact-name" class="form-label" data-i18n="contact.form.name">[ NAME ]</label>
         <input
           type="text"
           id="contact-name"
           name="name"
           class="form-input"
           placeholder="Your name"
+          data-i18n-placeholder="contact.form.name.placeholder"
           required
           autocomplete="name"
           aria-required="true"
         >
       </div>
       <div class="form-group">
-        <label for="contact-email" class="form-label">[ EMAIL ]</label>
+        <label for="contact-email" class="form-label" data-i18n="contact.form.email">[ EMAIL ]</label>
         <input
           type="email"
           id="contact-email"
@@ -1299,18 +1340,19 @@ html {
         >
       </div>
       <div class="form-group">
-        <label for="contact-message" class="form-label">[ MESSAGE ]</label>
+        <label for="contact-message" class="form-label" data-i18n="contact.form.message">[ MESSAGE ]</label>
         <textarea
           id="contact-message"
           name="message"
           class="form-input form-textarea"
           placeholder="Describe your project or inquiry..."
+          data-i18n-placeholder="contact.form.message.placeholder"
           required
           rows="5"
           aria-required="true"
         ></textarea>
       </div>
-      <button type="submit" class="btn btn--primary form-submit" aria-label="Send message">
+      <button type="submit" class="btn btn--primary form-submit" aria-label="Send message" data-i18n="contact.form.submit">
         TRANSMIT MESSAGE
       </button>
       <p class="form-status" id="formStatus" aria-live="polite"></p>
@@ -1323,7 +1365,7 @@ html {
 <!-- FOOTER -->
 <footer role="contentinfo">
   <div class="container">
-    <p class="footer-text">© 2026 HUMEREZ.DEV — DESIGNED & BUILT FROM LA PAZ, BOLIVIA</p>
+    <p class="footer-text" data-i18n="footer.text">© 2026 HUMEREZ.DEV — DESIGNED & BUILT FROM LA PAZ, BOLIVIA</p>
   </div>
 </footer>
 
@@ -1477,8 +1519,10 @@ if (contactForm && formStatus) {
     const data = new FormData(contactForm);
     const submitBtn = contactForm.querySelector('.form-submit');
     if (!submitBtn) return;
+    const lang = localStorage.getItem('preferred-lang') || 'en';
+    const isES = lang === 'es';
     submitBtn.disabled = true;
-    submitBtn.textContent = 'TRANSMITTING...';
+    submitBtn.textContent = isES ? 'ENVIANDO...' : 'TRANSMITTING...';
     formStatus.className = 'form-status';
     formStatus.textContent = '';
 
@@ -1489,20 +1533,246 @@ if (contactForm && formStatus) {
         headers: { Accept: 'application/json' }
       });
       if (res.ok) {
-        formStatus.textContent = '// MESSAGE TRANSMITTED SUCCESSFULLY';
+        formStatus.textContent = isES ? '// MENSAJE ENVIADO EXITOSAMENTE' : '// MESSAGE TRANSMITTED SUCCESSFULLY';
         contactForm.reset();
       } else {
         throw new Error('Server error');
       }
     } catch {
       formStatus.classList.add('error');
-      formStatus.textContent = '// TRANSMISSION FAILED — TRY EMAIL DIRECTLY';
+      formStatus.textContent = isES ? '// ERROR AL ENVIAR — INTENTA POR EMAIL DIRECTAMENTE' : '// TRANSMISSION FAILED — TRY EMAIL DIRECTLY';
     } finally {
       submitBtn.disabled = false;
-      submitBtn.textContent = 'TRANSMIT MESSAGE';
+      submitBtn.textContent = isES ? 'ENVIAR MENSAJE' : 'TRANSMIT MESSAGE';
     }
   });
 }
+
+// =============================================
+// LANGUAGE TOGGLE (i18n)
+// =============================================
+const translations = {
+  en: {
+    // Nav
+    'nav.about':    'About',
+    'nav.stack':    'Stack',
+    'nav.projects': 'Projects',
+    'nav.beyond':   'Beyond Code',
+    'nav.contact':  'Contact',
+    'nav.status':   'AVAILABLE FOR WORK',
+
+    // Hero
+    'hero.label':           'System Online — La Paz, Bolivia',
+    'hero.subtitle':        'Full-stack software developer building solutions for LATAM businesses. Specializing in .NET, React, and cloud-native architectures — powered by code, curiosity, and too much coffee.',
+    'hero.cta.projects':    'VIEW PROJECTS',
+    'hero.cta.talk':        "LET'S TALK",
+    'hero.stat.experience': 'Years Experience',
+    'hero.stat.projects':   'Projects Shipped',
+    'hero.stat.remote':     'Remote Experience',
+
+    // About
+    'about.tag':      '01 // About',
+    'about.title.1':  'PILOT',
+    'about.title.2':  'PROFILE',
+    'about.p1':       'I\'m a <strong>software developer</strong> based in La Paz, Bolivia, working remotely for a US-based company while building my own products targeting <strong>small and medium businesses</strong> across Bolivia and Latin America.',
+    'about.p2':       'I thrive at the intersection of <strong>solid backend architecture</strong> and <strong>polished frontend experiences</strong>. Whether it\'s designing scalable APIs, building real-time dashboards, or integrating AI pipelines — I ship software that solves real problems.',
+    'about.p3':       'When I\'m not coding, you\'ll find me building Gundam model kits, climbing through competitive Dota 2 matches, exploring new cuisines, or planning my next travel adventure. I believe the best developers bring <strong>diverse perspectives</strong> to their craft.',
+    'about.key.name':      'Name',
+    'about.key.location':  'Location',
+    'about.key.brand':     'Brand',
+    'about.key.focus':     'Focus',
+    'about.key.markets':   'Markets',
+    'about.key.languages': 'Languages',
+    'about.key.status':    'Status',
+    'about.val.focus':     'Full-Stack / SaaS',
+    'about.val.markets':   'US Remote + LATAM',
+    'about.val.languages': 'English & Spanish',
+    'about.val.status':    'Available',
+
+    // Stack
+    'stack.tag':     '02 // Arsenal',
+    'stack.title.1': 'TECH',
+    'stack.title.2': 'STACK',
+
+    // Projects
+    'projects.tag':     '03 // Deployments',
+    'projects.title.1': 'FEATURED',
+    'projects.title.2': 'PROJECTS',
+    'project.status.dev':     'In Dev',
+    'project.status.concept': 'Concept',
+    'project.status.live':    'Live',
+    'project.link.more':      'Learn More',
+    'project.link.view':      'View Project',
+    'project.condo.desc':       'Residential building management platform for the Bolivian market. Expense tracking, unit management, common areas booking — built for condominiums and property admins across LATAM.',
+    'project.restauranthub.desc': 'End-to-end restaurant management web app — table status, order tracking, kitchen display, digital receipts. SIN tax compliance integration as a key differentiator for the Bolivian market.',
+    'project.lexbolivia.desc':  'WhatsApp-based Bolivian legal intelligence platform. RAG pipelines, daily scraping of the Gaceta Oficial, and AI-powered legal queries accessible via the most popular messaging app in Bolivia.',
+    'project.restaurantpos.desc': 'Comprehensive tenant administration solution with service catalogs, BOB-denominated pricing, and automated management workflows for property administrators in Bolivia.',
+    'project.receipts.title':   'Debt & Receipts Tracker',
+    'project.receipts.desc':    'Personal and small-business debt tracking platform with digital receipt storage. Log who owes what, attach receipts as proof, and keep a clear ledger of pending and settled debts — all in one place.',
+
+    // Beyond Code
+    'beyond.tag':          '04 // Off-Duty',
+    'beyond.title.1':      'BEYOND',
+    'beyond.title.2':      'CODE',
+    'beyond.gunpla.label': 'Gunpla',
+    'beyond.gunpla.sub':   'Model Kit Builder',
+    'beyond.gaming.label': 'Gaming',
+    'beyond.gaming.sub':   'Dota 2 · CS2 · EA FC',
+    'beyond.travel.label': 'Travel',
+    'beyond.travel.sub':   'Explorer',
+    'beyond.food.label':   'Food',
+    'beyond.food.sub':     'Always Hungry',
+
+    // Contact
+    'contact.tag':        '05 // Comms',
+    'contact.headline.1': "LET'S",
+    'contact.headline.2': 'BUILD',
+    'contact.headline.3': 'SOMETHING',
+    'contact.sub':        'Available for full-time remote positions, freelance projects, and SaaS collaborations across US and LATAM markets.',
+    'contact.form.name':                '[ NAME ]',
+    'contact.form.name.placeholder':    'Your name',
+    'contact.form.email':               '[ EMAIL ]',
+    'contact.form.message':             '[ MESSAGE ]',
+    'contact.form.message.placeholder': 'Describe your project or inquiry...',
+    'contact.form.submit':              'TRANSMIT MESSAGE',
+
+    // Footer
+    'footer.text': '© 2026 HUMEREZ.DEV — DESIGNED & BUILT FROM LA PAZ, BOLIVIA',
+  },
+
+  es: {
+    // Nav
+    'nav.about':    'Sobre mí',
+    'nav.stack':    'Stack',
+    'nav.projects': 'Proyectos',
+    'nav.beyond':   'Fuera del Código',
+    'nav.contact':  'Contacto',
+    'nav.status':   'DISPONIBLE PARA TRABAJAR',
+
+    // Hero
+    'hero.label':           'Sistema en Línea — La Paz, Bolivia',
+    'hero.subtitle':        'Desarrollador de software full-stack construyendo soluciones para empresas de LATAM. Especializado en .NET, React y arquitecturas cloud-native — impulsado por código, curiosidad y demasiado café.',
+    'hero.cta.projects':    'VER PROYECTOS',
+    'hero.cta.talk':        'HABLEMOS',
+    'hero.stat.experience': 'Años de Experiencia',
+    'hero.stat.projects':   'Proyectos Entregados',
+    'hero.stat.remote':     'Experiencia Remota',
+
+    // About
+    'about.tag':      '01 // Sobre mí',
+    'about.title.1':  'PERFIL',
+    'about.title.2':  'DEL PILOTO',
+    'about.p1':       'Soy <strong>desarrollador de software</strong> con base en La Paz, Bolivia. Trabajo de forma remota para una empresa estadounidense mientras construyo mis propios productos orientados a <strong>pequeñas y medianas empresas</strong> en Bolivia y América Latina.',
+    'about.p2':       'Me desarrollo en la intersección de una <strong>arquitectura backend sólida</strong> y <strong>experiencias frontend pulidas</strong>. Ya sea diseñando APIs escalables, construyendo dashboards en tiempo real o integrando pipelines de IA — entrego software que resuelve problemas reales.',
+    'about.p3':       'Cuando no estoy programando, me encuentro armando maquetas de Gundam, escalando en partidas competitivas de Dota 2, explorando nuevas cocinas o planeando mi próxima aventura de viaje. Creo que los mejores desarrolladores aportan <strong>perspectivas diversas</strong> a su trabajo.',
+    'about.key.name':      'Nombre',
+    'about.key.location':  'Ubicación',
+    'about.key.brand':     'Marca',
+    'about.key.focus':     'Enfoque',
+    'about.key.markets':   'Mercados',
+    'about.key.languages': 'Idiomas',
+    'about.key.status':    'Estado',
+    'about.val.focus':     'Full-Stack / SaaS',
+    'about.val.markets':   'Remoto EE.UU. + LATAM',
+    'about.val.languages': 'Inglés y Español',
+    'about.val.status':    'Disponible',
+
+    // Stack
+    'stack.tag':     '02 // Arsenal',
+    'stack.title.1': 'STACK',
+    'stack.title.2': 'TECNOLÓGICO',
+
+    // Projects
+    'projects.tag':     '03 // Despliegues',
+    'projects.title.1': 'PROYECTOS',
+    'projects.title.2': 'DESTACADOS',
+    'project.status.dev':     'En Desarrollo',
+    'project.status.concept': 'Concepto',
+    'project.status.live':    'En Vivo',
+    'project.link.more':      'Ver Más',
+    'project.link.view':      'Ver Proyecto',
+    'project.condo.desc':       'Plataforma de gestión de edificios residenciales para el mercado boliviano. Control de gastos, administración de unidades y reserva de áreas comunes — diseñada para condominios y administradores de propiedades en LATAM.',
+    'project.restauranthub.desc': 'App web de gestión de restaurantes de extremo a extremo — estado de mesas, seguimiento de pedidos, pantalla de cocina y recibos digitales. Integración con el SIN como diferenciador clave para el mercado boliviano.',
+    'project.lexbolivia.desc':  'Plataforma de inteligencia legal boliviana vía WhatsApp. Pipelines RAG, scraping diario de la Gaceta Oficial y consultas legales con IA accesibles desde la app de mensajería más popular de Bolivia.',
+    'project.restaurantpos.desc': 'Solución integral de administración de inquilinos con catálogos de servicios, precios en BOB y flujos de trabajo automatizados para administradores de propiedades en Bolivia.',
+    'project.receipts.title':   'Rastreador de Deudas y Recibos',
+    'project.receipts.desc':    'Plataforma de seguimiento de deudas para uso personal y pequeñas empresas, con almacenamiento digital de recibos. Registra quién debe qué, adjunta comprobantes y mantén un ledger claro de deudas pendientes y saldadas.',
+
+    // Beyond Code
+    'beyond.tag':          '04 // Fuera de Servicio',
+    'beyond.title.1':      'MÁS ALLÁ',
+    'beyond.title.2':      'DEL CÓDIGO',
+    'beyond.gunpla.label': 'Gunpla',
+    'beyond.gunpla.sub':   'Constructor de Maquetas',
+    'beyond.gaming.label': 'Videojuegos',
+    'beyond.gaming.sub':   'Dota 2 · CS2 · EA FC',
+    'beyond.travel.label': 'Viajes',
+    'beyond.travel.sub':   'Explorador',
+    'beyond.food.label':   'Comida',
+    'beyond.food.sub':     'Siempre con Hambre',
+
+    // Contact
+    'contact.tag':        '05 // Comunicaciones',
+    'contact.headline.1': 'CONSTRUYAMOS',
+    'contact.headline.2': 'ALGO',
+    'contact.headline.3': 'JUNTOS',
+    'contact.sub':        'Disponible para posiciones remotas a tiempo completo, proyectos freelance y colaboraciones SaaS en mercados de EE.UU. y LATAM.',
+    'contact.form.name':                '[ NOMBRE ]',
+    'contact.form.name.placeholder':    'Tu nombre',
+    'contact.form.email':               '[ CORREO ]',
+    'contact.form.message':             '[ MENSAJE ]',
+    'contact.form.message.placeholder': 'Describe tu proyecto o consulta...',
+    'contact.form.submit':              'ENVIAR MENSAJE',
+
+    // Footer
+    'footer.text': '© 2026 HUMEREZ.DEV — DISEÑADO Y CONSTRUIDO DESDE LA PAZ, BOLIVIA',
+  }
+};
+
+function applyLanguage(lang) {
+  const dict = translations[lang];
+  if (!dict) return;
+
+  // Text content nodes
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (dict[key] !== undefined) {
+      el.innerHTML = dict[key];
+    }
+  });
+
+  // Placeholder attributes
+  document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+    const key = el.getAttribute('data-i18n-placeholder');
+    if (dict[key] !== undefined) {
+      el.setAttribute('placeholder', dict[key]);
+    }
+  });
+
+  // Update toggle button active state
+  document.getElementById('langEN').classList.toggle('active', lang === 'en');
+  document.getElementById('langES').classList.toggle('active', lang === 'es');
+
+  // Update html lang attribute
+  document.documentElement.setAttribute('lang', lang === 'es' ? 'es' : 'en');
+
+  // Persist
+  localStorage.setItem('preferred-lang', lang);
+}
+
+// Init: load saved preference or default to EN
+const savedLang = localStorage.getItem('preferred-lang') || 'en';
+applyLanguage(savedLang);
+
+// Toggle click handler
+document.getElementById('langToggle').addEventListener('click', () => {
+  const current = localStorage.getItem('preferred-lang') || 'en';
+  applyLanguage(current === 'en' ? 'es' : 'en');
+});
+
+// =============================================
+// END LANGUAGE TOGGLE
+// =============================================
 
 // Project cards — navigate to data-url on click (if not placeholder)
 document.querySelectorAll('.project-card[data-url]').forEach(card => {
