@@ -3,12 +3,16 @@
 > Diego Humerez is an AI & full-stack software engineer based in La Paz, Bolivia (GMT-4). He builds retrieval-augmented generation (RAG) systems, LLM agents and document intelligence, plus production web applications with .NET, React, TypeScript, Python and FastAPI. He works in English and Spanish and is available for freelance projects and remote roles across the US, Europe and Latin America.
 
 Key facts:
+- Solution provider for businesses: custom web applications, business systems (point-of-sale, inventory, admin platforms), process automation, and AI-first products (RAG assistants, LLM agents, chatbots, document intelligence). Serves Bolivia and Latin America (in Spanish) and the US and Europe (in English), fully remote.
+- Available for hire as a software developer, AI developer and automation consultant — based in La Paz, Bolivia; serving Latin America and remote worldwide. Engagement: free scoping call, then a fixed-scope proposal or hourly work; replies within 24 hours (humerezdiego1994@gmail.com).
 - Flagship project: Asesor Legal IA (https://legal.humerez.dev) — a production legal-AI platform for Bolivian law. Grounded RAG over 9 legal codes and 4,170+ articles; every answer cites the exact article with links to official sources.
 - Other live products: Restaurant Hub (https://humerez.dev/restaurant/login) — real-time restaurant operations with Bolivian SIN tax integration; Debt & Receipts Tracker (https://humerez.dev/receipts/login) — debt ledger with digital receipt storage.
 - Services offered: AI agents & RAG systems (Python, FastAPI, vector databases, Claude/GPT/DeepSeek APIs); full-stack web apps (.NET/C#, React, TypeScript, PostgreSQL); cloud/DevOps & automation (Docker, Traefik, GitHub Actions, Linux VPS).
 - Experience: 5+ years shipping software, including remote work for US companies and SaaS for Latin American businesses.
 - Languages: Spanish (native), English (fluent).
 - Contact: humerezdiego1994@gmail.com · https://github.com/dhumerez · https://www.linkedin.com/in/diego-humerez
+
+En español: Diego Humerez desarrolla software a medida y soluciones con IA para empresas de Bolivia y Latinoamérica — aplicaciones web, sistemas para negocios, automatización de procesos y asistentes con inteligencia artificial (RAG, agentes LLM, chatbots). Con base en La Paz, Bolivia; trabajo 100% remoto; respuesta en menos de 24 horas.
 
 ## Pages
 

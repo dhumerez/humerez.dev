@@ -825,6 +825,64 @@ section { padding: 6rem 0; position: relative; }
 .projects-more a { color: var(--accent-blue); text-decoration: none; }
 .projects-more a:hover { text-decoration: underline; }
 
+/* === SECTION INTRO (SEO-rich lead paragraph) === */
+.section-intro {
+  color: var(--text-secondary);
+  font-size: 1.05rem;
+  max-width: 760px;
+  margin-top: 1rem;
+  font-weight: 400;
+}
+.section-intro strong { color: var(--text-primary); font-weight: 600; }
+
+/* === FAQ === */
+.faq-list {
+  max-width: 780px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+.faq-item {
+  background: var(--bg-card);
+  border: 1px solid var(--panel-line);
+  clip-path: polygon(0 0, calc(100% - 14px) 0, 100% 14px, 100% 100%, 14px 100%, 0 calc(100% - 14px));
+  transition: border-color 0.3s;
+}
+.faq-item[open] { border-color: var(--accent-blue); }
+.faq-item summary {
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.1rem 1.4rem;
+  font-family: var(--font-display);
+  font-size: 0.92rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  transition: color 0.3s;
+}
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::after {
+  content: '+';
+  font-family: var(--font-mono);
+  color: var(--accent-red);
+  font-size: 1.2rem;
+  flex-shrink: 0;
+  transition: transform 0.3s;
+}
+.faq-item[open] summary::after { transform: rotate(45deg); }
+.faq-item summary:hover { color: var(--accent-blue); }
+.faq-answer {
+  padding: 0 1.4rem 1.2rem;
+  color: var(--text-secondary);
+  font-size: 0.98rem;
+}
+.faq-answer a { color: var(--accent-blue); text-decoration: none; }
+.faq-answer a:hover { text-decoration: underline; }
+
 /* === INTERESTS === */
 .interests-grid {
   display: grid;
