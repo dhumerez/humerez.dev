@@ -11,7 +11,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Deploy to server
+      - name: Deploy site to server
         env:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
         run: |
@@ -19,4 +19,4 @@ jobs:
           echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_ed25519
           chmod 600 ~/.ssh/id_ed25519
           ssh-keyscan -H 204.168.180.162 >> ~/.ssh/known_hosts
-          scp landing-page.html root@204.168.180.162:/opt/traefik/landing/index.html
+          rsync -az --delete -e "ssh -i ~/.ssh/id_ed25519" site/ root@204.168.180.162:/opt/traefik/landing/site/

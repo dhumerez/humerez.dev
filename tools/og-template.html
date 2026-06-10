@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: 1200px; height: 630px; overflow: hidden; }
+  body {
+    background: #0a0c10;
+    position: relative;
+    font-family: 'Orbitron', sans-serif;
+    color: #e8eaed;
+    background-image:
+      radial-gradient(ellipse at 18% 50%, rgba(230,57,70,0.10) 0%, transparent 55%),
+      radial-gradient(ellipse at 85% 30%, rgba(0,180,216,0.09) 0%, transparent 50%),
+      linear-gradient(rgba(255,255,255,0.045) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.045) 1px, transparent 1px);
+    background-size: auto, auto, 60px 60px, 60px 60px;
+  }
+  .frame {
+    position: absolute; inset: 26px;
+    border: 1px solid rgba(255,255,255,0.10);
+  }
+  .corner { position: absolute; width: 26px; height: 26px; }
+  .corner::before, .corner::after { content: ''; position: absolute; background: #e63946; }
+  .corner.tl { top: -2px; left: -2px; }
+  .corner.tl::before { width: 26px; height: 3px; } .corner.tl::after { width: 3px; height: 26px; }
+  .corner.tr { top: -2px; right: -2px; }
+  .corner.tr::before { width: 26px; height: 3px; right: 0; } .corner.tr::after { width: 3px; height: 26px; right: 0; }
+  .corner.bl { bottom: -2px; left: -2px; }
+  .corner.bl::before { width: 26px; height: 3px; bottom: 0; } .corner.bl::after { width: 3px; height: 26px; bottom: 0; }
+  .corner.br { bottom: -2px; right: -2px; }
+  .corner.br::before { width: 26px; height: 3px; bottom: 0; right: 0; } .corner.br::after { width: 3px; height: 26px; bottom: 0; right: 0; }
+  .content {
+    position: absolute;
+    left: 80px; top: 50%;
+    transform: translateY(-50%);
+    max-width: 660px;
+  }
+  .label {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 19px;
+    letter-spacing: 5px;
+    color: #00b4d8;
+    margin-bottom: 18px;
+  }
+  h1 { font-size: 84px; font-weight: 900; line-height: 1.04; letter-spacing: -1px; }
+  h1 .red { color: #e63946; }
+  .role {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 25px;
+    letter-spacing: 4px;
+    color: #f4a620;
+    margin-top: 22px;
+  }
+  .tags {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 19px;
+    color: #9badc4;
+    margin-top: 26px;
+    letter-spacing: 1px;
+  }
+  .url {
+    position: absolute;
+    left: 80px; bottom: 58px;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 21px;
+    letter-spacing: 3px;
+    color: #e63946;
+  }
+  .mecha {
+    position: absolute;
+    right: 60px; top: 50%;
+    transform: translateY(-50%);
+    width: 400px;
+  }
+</style>
+</head>
+<body>
+  <div class="frame">
+    <div class="corner tl"></div><div class="corner tr"></div>
+    <div class="corner bl"></div><div class="corner br"></div>
+  </div>
+  <div class="content">
+    <div class="label">SYSTEM ONLINE — LA PAZ, BOLIVIA</div>
+    <h1>DIEGO<br><span class="red">HUMEREZ</span></h1>
+    <div class="role">AI &amp; FULL-STACK ENGINEER</div>
+    <div class="tags">RAG · LLM AGENTS · .NET · REACT · PYTHON · FASTAPI</div>
+  </div>
+  <div class="url">humerez.dev</div>
+
+  <svg class="mecha" viewBox="0 0 400 460" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <filter id="glowBlue" x="-60%" y="-60%" width="220%" height="220%">
+        <feGaussianBlur stdDeviation="2.2" result="b"/>
+        <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+      </filter>
+      <filter id="glowRed" x="-60%" y="-60%" width="220%" height="220%">
+        <feGaussianBlur stdDeviation="2.4" result="b"/>
+        <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+      </filter>
+      <linearGradient id="steel" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#222b3c"/>
+        <stop offset="1" stop-color="#141a26"/>
+      </linearGradient>
+      <linearGradient id="steelDark" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#161d2a"/>
+        <stop offset="1" stop-color="#0d1117"/>
+      </linearGradient>
+      <linearGradient id="gold" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#ffc14d"/>
+        <stop offset="1" stop-color="#d88a10"/>
+      </linearGradient>
+    </defs>
+    <ellipse cx="200" cy="210" rx="160" ry="150" fill="rgba(0,180,216,0.05)"/>
+    <polygon points="200,30 330,105 330,255 200,330 70,255 70,105" fill="none" stroke="rgba(0,180,216,0.14)" stroke-width="1"/>
+    <polygon points="200,52 310,116 310,244 200,308 90,244 90,116" fill="none" stroke="rgba(230,57,70,0.10)" stroke-width="1"/>
+    <g>
+      <polygon points="190,128 58,60 84,44 198,112" fill="url(#gold)" stroke="#8a5d08" stroke-width="1.5"/>
+      <polygon points="210,128 342,60 316,44 202,112" fill="url(#gold)" stroke="#8a5d08" stroke-width="1.5"/>
+      <polygon points="200,102 216,124 200,140 184,124" fill="#e63946" stroke="#8f1d27" stroke-width="1.5" filter="url(#glowRed)"/>
+    </g>
+    <polygon points="200,64 250,84 272,114 276,152 252,148 200,142 148,148 124,152 128,114 150,84" fill="url(#steel)" stroke="#5b6b82" stroke-width="2"/>
+    <polygon points="192,68 208,68 212,140 188,140" fill="#1c2535" stroke="#5b6b82" stroke-width="1"/>
+    <polygon points="184,124 216,124 211,138 189,138" fill="#e63946" stroke="#8f1d27" stroke-width="1" filter="url(#glowRed)"/>
+    <polygon points="112,150 130,144 136,210 122,214 108,184" fill="url(#steelDark)" stroke="#5b6b82" stroke-width="1.5"/>
+    <polygon points="288,150 270,144 264,210 278,214 292,184" fill="url(#steelDark)" stroke="#5b6b82" stroke-width="1.5"/>
+    <polygon points="116,160 128,156 130,196 120,198" fill="url(#gold)" stroke="#8a5d08" stroke-width="1"/>
+    <polygon points="284,160 272,156 270,196 280,198" fill="url(#gold)" stroke="#8a5d08" stroke-width="1"/>
+    <polygon points="128,152 152,148 164,200 156,234 134,216 124,182" fill="url(#steel)" stroke="#5b6b82" stroke-width="2"/>
+    <polygon points="272,152 248,148 236,200 244,234 266,216 276,182" fill="url(#steel)" stroke="#5b6b82" stroke-width="2"/>
+    <polygon points="152,148 248,148 240,206 200,222 160,206" fill="url(#steelDark)" stroke="#39455c" stroke-width="1.5"/>
+    <g filter="url(#glowBlue)">
+      <polygon points="158,171 188,165 188,181 162,185" fill="#00e5ff"/>
+      <polygon points="242,171 212,165 212,181 238,185" fill="#00e5ff"/>
+    </g>
+    <polygon points="188,163 212,163 212,183 188,183" fill="#0d1117"/>
+    <polygon points="156,164 244,164 240,170 160,170" fill="#0a0e15"/>
+    <polygon points="190,192 210,192 207,202 193,202" fill="#222b3c" stroke="#39455c" stroke-width="1"/>
+    <line x1="196" y1="194" x2="196" y2="200" stroke="#0d1117" stroke-width="1.5"/>
+    <line x1="204" y1="194" x2="204" y2="200" stroke="#0d1117" stroke-width="1.5"/>
+    <polygon points="183,214 217,214 208,244 192,244" fill="#e63946" stroke="#8f1d27" stroke-width="1.5"/>
+    <polygon points="180,244 220,244 224,266 176,266" fill="url(#steelDark)" stroke="#39455c" stroke-width="1.5"/>
+    <line x1="184" y1="252" x2="216" y2="252" stroke="#39455c" stroke-width="1"/>
+    <line x1="182" y1="259" x2="218" y2="259" stroke="#39455c" stroke-width="1"/>
+    <polygon points="176,266 120,276 96,318 150,330 178,300" fill="url(#steel)" stroke="#5b6b82" stroke-width="2"/>
+    <polygon points="224,266 280,276 304,318 250,330 222,300" fill="url(#steel)" stroke="#5b6b82" stroke-width="2"/>
+    <line x1="118" y1="290" x2="146" y2="286" stroke="#39455c" stroke-width="2"/>
+    <line x1="122" y1="300" x2="150" y2="296" stroke="#39455c" stroke-width="2"/>
+    <line x1="282" y1="290" x2="254" y2="286" stroke="#39455c" stroke-width="2"/>
+    <line x1="278" y1="300" x2="250" y2="296" stroke="#39455c" stroke-width="2"/>
+    <polygon points="178,268 222,268 236,306 200,336 164,306" fill="#b32837" stroke="#7d1722" stroke-width="2"/>
+    <polygon points="200,288 216,304 200,320 184,304" fill="#00b4d8" stroke="#04708a" stroke-width="1.5" filter="url(#glowBlue)"/>
+    <g fill="none" stroke="rgba(155,173,196,0.5)" stroke-width="1">
+      <polyline points="150,84 162,100 162,128"/>
+      <polyline points="250,84 238,100 238,128"/>
+      <polyline points="128,114 144,120 148,140"/>
+      <polyline points="272,114 256,120 252,140"/>
+      <polyline points="164,306 178,312 200,316"/>
+      <polyline points="236,306 222,312 200,316"/>
+    </g>
+  </svg>
+</body>
+</html>

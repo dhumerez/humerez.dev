@@ -1,0 +1,23 @@
+# Diego Humerez — humerez.dev
+
+> Diego Humerez is an AI & full-stack software engineer based in La Paz, Bolivia (GMT-4). He builds retrieval-augmented generation (RAG) systems, LLM agents and document intelligence, plus production web applications with .NET, React, TypeScript, Python and FastAPI. He works in English and Spanish and is available for freelance projects and remote roles across the US, Europe and Latin America.
+
+Key facts:
+- Flagship project: Asesor Legal IA (https://legal.humerez.dev) — a production legal-AI platform for Bolivian law. Grounded RAG over 9 legal codes and 4,170+ articles; every answer cites the exact article with links to official sources.
+- Other live products: Restaurant Hub (https://humerez.dev/restaurant/login) — real-time restaurant operations with Bolivian SIN tax integration; Debt & Receipts Tracker (https://humerez.dev/receipts/login) — debt ledger with digital receipt storage.
+- Services offered: AI agents & RAG systems (Python, FastAPI, vector databases, Claude/GPT/DeepSeek APIs); full-stack web apps (.NET/C#, React, TypeScript, PostgreSQL); cloud/DevOps & automation (Docker, Traefik, GitHub Actions, Linux VPS).
+- Experience: 5+ years shipping software, including remote work for US companies and SaaS for Latin American businesses.
+- Languages: Spanish (native), English (fluent).
+- Contact: humerezdiego1994@gmail.com · https://github.com/dhumerez · https://www.linkedin.com/in/diego-humerez
+
+## Pages
+
+- [Portfolio (English)](https://humerez.dev/): About, services, tech stack, featured projects and contact.
+- [Portafolio (Español)](https://humerez.dev/es/): Sobre mí, servicios, stack tecnológico, proyectos destacados y contacto.
+
+## Projects
+
+- [Asesor Legal IA](https://legal.humerez.dev): AI legal advisor for Bolivian law — grounded RAG, verifiable citations, multi-mode legal analysis, per-customer authentication.
+- [Restaurant Hub](https://humerez.dev/restaurant/login): End-to-end restaurant management — table map, orders, kitchen display, digital receipts, SIN compliance.
+- [Debt & Receipts Tracker](https://humerez.dev/receipts/login): Debt ledger with receipts as proof for individuals and small businesses.
+- [GitHub profile](https://github.com/dhumerez): Source code and more projects.

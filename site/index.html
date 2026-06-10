@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Diego Humerez | AI &amp; Full-Stack Engineer — humerez.dev</title>
+
+<!-- SEO -->
+<meta name="description" content="Diego Humerez — AI & full-stack engineer in La Paz, Bolivia. I build RAG systems, LLM agents and production web apps (.NET, React, Python, FastAPI). Available for freelance and remote roles in the US, Europe and LATAM.">
+<meta name="author" content="Diego Humerez">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#0a0c10">
+<link rel="canonical" href="https://humerez.dev/">
+<link rel="alternate" hreflang="en" href="https://humerez.dev/">
+<link rel="alternate" hreflang="es" href="https://humerez.dev/es/">
+<link rel="alternate" hreflang="x-default" href="https://humerez.dev/">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://humerez.dev/">
+<meta property="og:site_name" content="humerez.dev">
+<meta property="og:title" content="Diego Humerez | AI &amp; Full-Stack Engineer">
+<meta property="og:description" content="I build RAG systems, LLM agents and production web apps. Flagship: a legal-AI platform grounded in 4,170+ articles of Bolivian law. Available for freelance.">
+<meta property="og:image" content="https://humerez.dev/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="es_ES">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Diego Humerez | AI &amp; Full-Stack Engineer">
+<meta name="twitter:description" content="RAG systems, LLM agents and production web apps — built from La Paz, Bolivia. Available for freelance.">
+<meta name="twitter:image" content="https://humerez.dev/assets/og-image.png">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="/assets/site.css">
+<script src="/assets/site.js" defer></script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://humerez.dev/#person",
+      "name": "Diego Humerez",
+      "alternateName": "dhumerez",
+      "jobTitle": "AI & Full-Stack Software Engineer",
+      "description": "Software engineer in La Paz, Bolivia building AI products — retrieval-augmented generation (RAG) systems, LLM agents and document intelligence — plus full-stack web applications with .NET, React, TypeScript, Python and FastAPI. Available for freelance projects and remote roles across the US, Europe and Latin America.",
+      "url": "https://humerez.dev/",
+      "email": "mailto:humerezdiego1994@gmail.com",
+      "image": "https://humerez.dev/assets/og-image.png",
+      "sameAs": [
+        "https://github.com/dhumerez",
+        "https://www.linkedin.com/in/diego-humerez"
+      ],
+      "address": { "@type": "PostalAddress", "addressLocality": "La Paz", "addressCountry": "BO" },
+      "nationality": { "@type": "Country", "name": "Bolivia" },
+      "knowsLanguage": [
+        { "@type": "Language", "name": "Spanish", "alternateName": "es" },
+        { "@type": "Language", "name": "English", "alternateName": "en" }
+      ],
+      "knowsAbout": [
+        "Artificial Intelligence", "Retrieval-Augmented Generation", "LLM agents",
+        "Python", "FastAPI", ".NET", "C#", "React", "TypeScript", "Node.js",
+        "PostgreSQL", "SQL Server", "Docker", "Vector databases", "Prompt engineering",
+        "Legal technology", "SaaS development"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://humerez.dev/#website",
+      "url": "https://humerez.dev/",
+      "name": "humerez.dev",
+      "description": "Portfolio of Diego Humerez — AI & full-stack engineer in La Paz, Bolivia.",
+      "inLanguage": ["en", "es"],
+      "publisher": { "@id": "https://humerez.dev/#person" }
+    },
+    {
+      "@type": "ProfilePage",
+      "@id": "https://humerez.dev/#profilepage",
+      "url": "https://humerez.dev/",
+      "inLanguage": "en",
+      "isPartOf": { "@id": "https://humerez.dev/#website" },
+      "about": { "@id": "https://humerez.dev/#person" },
+      "mainEntity": { "@id": "https://humerez.dev/#person" }
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://humerez.dev/#projects",
+      "name": "Featured projects by Diego Humerez",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "item": {
+            "@type": "SoftwareApplication",
+            "name": "Asesor Legal IA — Bolivian legal AI platform",
+            "url": "https://legal.humerez.dev",
+            "applicationCategory": "BusinessApplication",
+            "operatingSystem": "Web",
+            "description": "Production legal-AI platform for Bolivian law: grounded RAG over 9 legal codes and 4,170+ articles, where every answer cites the exact article with links to official sources.",
+            "author": { "@id": "https://humerez.dev/#person" }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "item": {
+            "@type": "SoftwareApplication",
+            "name": "Restaurant Hub",
+            "url": "https://humerez.dev/restaurant/login",
+            "applicationCategory": "BusinessApplication",
+            "operatingSystem": "Web",
+            "description": "Real-time restaurant management: table map, order tracking, kitchen display, digital receipts and SIN tax-compliance integration for the Bolivian market.",
+            "author": { "@id": "https://humerez.dev/#person" }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "item": {
+            "@type": "SoftwareApplication",
+            "name": "Debt & Receipts Tracker",
+            "url": "https://humerez.dev/receipts/login",
+            "applicationCategory": "FinanceApplication",
+            "operatingSystem": "Web",
+            "description": "Debt ledger for individuals and small businesses with digital receipt storage — track who owes what with receipts as proof.",
+            "author": { "@id": "https://humerez.dev/#person" }
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+<div class="scroll-progress" aria-hidden="true"></div>
+
+<!-- NAV -->
+<nav class="site-nav" aria-label="Main navigation">
+  <div class="container">
+    <a href="#" class="nav-logo">HUMEREZ</a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#stack">Stack</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="nav-status"><span class="dot"></span> OPEN TO WORK</div>
+    <div class="lang-switch" aria-label="Language">
+      <span aria-hidden="true">[</span><span class="current" aria-current="true">EN</span><span class="sep">|</span><a href="/es/" data-set-lang="es" hreflang="es" lang="es" title="Versión en español">ES</a><span aria-hidden="true">]</span>
+    </div>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navLinks">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<main id="main-content">
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="hero-bg" aria-hidden="true"></div>
+  <div class="hero-grid" aria-hidden="true"></div>
+  <div class="hero-shape hero-shape--1" aria-hidden="true"></div>
+  <div class="hero-shape hero-shape--2" aria-hidden="true"></div>
+  <div class="container hero-inner">
+    <div class="hero-content">
+      <p class="hero-label">System Online — La Paz, Bolivia · GMT-4</p>
+      <h1 class="hero-title">
+        DIEGO
+        <span class="line-2">HUMEREZ</span>
+      </h1>
+      <p class="hero-role" aria-label="AI Engineer, Full-Stack Developer, RAG and LLM systems builder"><span data-roles='["AI ENGINEER","FULL-STACK DEVELOPER","RAG &amp; LLM SYSTEMS BUILDER","FREELANCE PARTNER"]'>AI ENGINEER</span><span class="cursor" aria-hidden="true"></span></p>
+      <p class="hero-subtitle">I build <strong>AI products that actually ship</strong> — retrieval-augmented generation, LLM agents and automation — backed by solid full-stack engineering in <strong>.NET, React, Python and FastAPI</strong>. Currently operating a production legal-AI platform used by professionals in Bolivia.</p>
+      <div class="hero-ctas">
+        <a href="#projects" class="btn btn--primary">VIEW PROJECTS</a>
+        <a href="#contact" class="btn btn--secondary">HIRE ME</a>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <div class="hero-stat-value" data-count-to="5" data-suffix="+">5+</div>
+          <div class="hero-stat-label">Years Experience</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-value" data-count-to="10" data-suffix="+">10+</div>
+          <div class="hero-stat-label">Projects Shipped</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-value" data-count-to="4170" data-suffix="+">4,170+</div>
+          <div class="hero-stat-label">Law Articles Indexed</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-value">EN / ES</div>
+          <div class="hero-stat-label">Fully Bilingual</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MECHA -->
+    <div class="hero-mecha" aria-hidden="true">
+      <div class="mecha-ring mecha-ring--1"></div>
+      <div class="mecha-ring mecha-ring--2"></div>
+      <svg viewBox="0 0 400 460" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Gundam-style mecha illustration">
+        <defs>
+          <filter id="glowBlue" x="-60%" y="-60%" width="220%" height="220%">
+            <feGaussianBlur stdDeviation="2.2" result="b"/>
+            <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+          <filter id="glowRed" x="-60%" y="-60%" width="220%" height="220%">
+            <feGaussianBlur stdDeviation="2.4" result="b"/>
+            <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+          <linearGradient id="steel" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#222b3c"/>
+            <stop offset="1" stop-color="#141a26"/>
+          </linearGradient>
+          <linearGradient id="steelDark" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#161d2a"/>
+            <stop offset="1" stop-color="#0d1117"/>
+          </linearGradient>
+          <linearGradient id="gold" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#ffc14d"/>
+            <stop offset="1" stop-color="#d88a10"/>
+          </linearGradient>
+        </defs>
+
+        <!-- backdrop hex + glow -->
+        <ellipse cx="200" cy="210" rx="160" ry="150" fill="rgba(0,180,216,0.05)"/>
+        <polygon points="200,30 330,105 330,255 200,330 70,255 70,105" fill="none" stroke="rgba(0,180,216,0.14)" stroke-width="1"/>
+        <polygon points="200,52 310,116 310,244 200,308 90,244 90,116" fill="none" stroke="rgba(230,57,70,0.10)" stroke-width="1"/>
+
+        <!-- V-FIN -->
+        <g class="mecha-vfin">
+          <polygon points="190,128 58,60 84,44 198,112" fill="url(#gold)" stroke="#8a5d08" stroke-width="1.5"/>
+          <polygon points="210,128 342,60 316,44 202,112" fill="url(#gold)" stroke="#8a5d08" stroke-width="1.5"/>
+          <polygon points="200,102 216,124 200,140 184,124" fill="#e63946" stroke="#8f1d27" stroke-width="1.5" filter="url(#glowRed)"/>
+        </g>
+
+        <!-- HELMET DOME -->
+        <polygon points="200,64 250,84 272,114 276,152 252,148 200,142 148,148 124,152 128,114 150,84"
+                 fill="url(#steel)" stroke="#5b6b82" stroke-width="2"/>
+        <!-- dome center crease -->
+        <polygon points="192,68 208,68 212,140 188,140" fill="#1c2535" stroke="#5b6b82" stroke-width="1"/>
+
+        <!-- FOREHEAD SENSOR -->
+        <polygon points="184,124 216,124 211,138 189,138" fill="#e63946" stroke="#8f1d27" stroke-width="1" filter="url(#glowRed)"/>
+
+        <!-- SIDE EAR BLOCKS -->
+        <polygon points="112,150 130,144 136,210 122,214 108,184" fill="url(#steelDark)" stroke="#5b6b82" stroke-width="1.5"/>
+        <polygon points="288,150 270,144 264,210 278,214 292,184" fill="url(#steelDark)" stroke="#5b6b82" stroke-width="1.5"/>
+        <!-- ear ducts (gold) -->
+        <polygon points="116,160 128,156 130,196 120,198" fill="url(#gold)" stroke="#8a5d08" stroke-width="1"/>
+        <polygon points="284,160 272,156 270,196 280,198" fill="url(#gold)" stroke="#8a5d08" stroke-width="1"/>
+
+        <!-- CHEEK ARMOR -->
+        <polygon points="128,152 152,148 164,200 156,234 134,216 124,182" fill="url(#steel)" stroke="#5b6b82" stroke-width="2"/>
+        <polygon points="272,152 248,148 236,200 244,234 266,216 276,182" fill="url(#steel)" stroke="#5b6b82" stroke-width="2"/>
+
+        <!-- FACE RECESS -->
+        <polygon points="152,148 248,148 240,206 200,222 160,206" fill="url(#steelDark)" stroke="#39455c" stroke-width="1.5"/>
+
+        <!-- EYES -->
+        <g filter="url(#glowBlue)">
+          <polygon class="mecha-eye" points="158,171 188,165 188,181 162,185" fill="#00e5ff"/>
+          <polygon class="mecha-eye" points="242,171 212,165 212,181 238,185" fill="#00e5ff"/>
+        </g>
+        <polygon points="188,163 212,163 212,183 188,183" fill="#0d1117"/>
+        <!-- brow shadow -->
+        <polygon points="156,164 244,164 240,170 160,170" fill="#0a0e15"/>
+
+        <!-- visor scan line -->
+        <line class="mecha-scan" x1="156" y1="168" x2="244" y2="168" stroke="#00e5ff" stroke-width="2"/>
+
+        <!-- NOSE VENTS -->
+        <polygon points="190,192 210,192 207,202 193,202" fill="#222b3c" stroke="#39455c" stroke-width="1"/>
+        <line x1="196" y1="194" x2="196" y2="200" stroke="#0d1117" stroke-width="1.5"/>
+        <line x1="204" y1="194" x2="204" y2="200" stroke="#0d1117" stroke-width="1.5"/>
+
+        <!-- CHIN -->
+        <polygon points="183,214 217,214 208,244 192,244" fill="#e63946" stroke="#8f1d27" stroke-width="1.5"/>
+
+        <!-- NECK -->
+        <polygon points="180,244 220,244 224,266 176,266" fill="url(#steelDark)" stroke="#39455c" stroke-width="1.5"/>
+        <line x1="184" y1="252" x2="216" y2="252" stroke="#39455c" stroke-width="1"/>
+        <line x1="182" y1="259" x2="218" y2="259" stroke="#39455c" stroke-width="1"/>
+
+        <!-- COLLAR / SHOULDERS -->
+        <polygon points="176,266 120,276 96,318 150,330 178,300" fill="url(#steel)" stroke="#5b6b82" stroke-width="2"/>
+        <polygon points="224,266 280,276 304,318 250,330 222,300" fill="url(#steel)" stroke="#5b6b82" stroke-width="2"/>
+        <!-- shoulder vents -->
+        <line x1="118" y1="290" x2="146" y2="286" stroke="#39455c" stroke-width="2"/>
+        <line x1="122" y1="300" x2="150" y2="296" stroke="#39455c" stroke-width="2"/>
+        <line x1="282" y1="290" x2="254" y2="286" stroke="#39455c" stroke-width="2"/>
+        <line x1="278" y1="300" x2="250" y2="296" stroke="#39455c" stroke-width="2"/>
+
+        <!-- CHEST -->
+        <polygon points="178,268 222,268 236,306 200,336 164,306" fill="#b32837" stroke="#7d1722" stroke-width="2"/>
+        <!-- cockpit gem -->
+        <polygon points="200,288 216,304 200,320 184,304" fill="#00b4d8" stroke="#04708a" stroke-width="1.5" filter="url(#glowBlue)"/>
+
+        <!-- panel detail lines (drawn on load) -->
+        <g class="mecha-lines" fill="none" stroke="rgba(155,173,196,0.5)" stroke-width="1">
+          <polyline points="150,84 162,100 162,128"/>
+          <polyline points="250,84 238,100 238,128"/>
+          <polyline points="128,114 144,120 148,140"/>
+          <polyline points="272,114 256,120 252,140"/>
+          <polyline points="164,306 178,312 200,316"/>
+          <polyline points="236,306 222,312 200,316"/>
+        </g>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <div class="section-header reveal">
+      <p class="section-tag">01 // About</p>
+      <h2 class="section-title">PILOT <span class="accent-red">PROFILE</span></h2>
+    </div>
+    <div class="about-grid">
+      <div class="about-text reveal reveal--left reveal-delay-1">
+        <p>I'm <strong>Diego Humerez</strong>, an <strong>AI and full-stack software engineer</strong> based in La Paz, Bolivia. I design and ship <strong>AI-powered products</strong> — retrieval-augmented generation (RAG) systems, LLM agents and document intelligence — together with the full-stack engineering they need to reach production: <strong>.NET, React, TypeScript, Python and FastAPI</strong>.</p>
+        <p>My current flagship is <a href="https://legal.humerez.dev" target="_blank" rel="noopener noreferrer">Asesor Legal IA</a>, a production legal-AI platform for Bolivian law: a grounded RAG pipeline over <strong>9 legal codes and 4,170+ articles</strong>, where every answer carries citations you can verify against the official source — no hallucinated law.</p>
+        <p>Before going deep on AI I spent years shipping enterprise software, working remotely with US companies and building SaaS for businesses across Latin America. That mix means I don't just prototype models — I deliver <strong>authenticated, containerized, monitored products</strong> running on real infrastructure.</p>
+        <p>Off duty you'll find me building Gunpla, queuing Dota 2, hunting street food or planning the next trip.</p>
+      </div>
+      <div class="about-details reveal reveal--right reveal-delay-2">
+        <div class="about-detail-row">
+          <span class="about-detail-key">Name</span>
+          <span class="about-detail-val">Diego Humerez</span>
+        </div>
+        <div class="about-detail-row">
+          <span class="about-detail-key">Location</span>
+          <span class="about-detail-val">La Paz, Bolivia (GMT-4)</span>
+        </div>
+        <div class="about-detail-row">
+          <span class="about-detail-key">Focus</span>
+          <span class="about-detail-val">AI Engineering · Full-Stack</span>
+        </div>
+        <div class="about-detail-row">
+          <span class="about-detail-key">Markets</span>
+          <span class="about-detail-val">US · Europe · LATAM (remote)</span>
+        </div>
+        <div class="about-detail-row">
+          <span class="about-detail-key">Languages</span>
+          <span class="about-detail-val">Spanish (native) · English (fluent)</span>
+        </div>
+        <div class="about-detail-row">
+          <span class="about-detail-key">Availability</span>
+          <span class="about-detail-val accent-blue">Freelance &amp; contract — open</span>
+        </div>
+        <div class="about-detail-row">
+          <span class="about-detail-key">Response time</span>
+          <span class="about-detail-val">&lt; 24 h</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services" style="background: var(--bg-secondary);">
+  <div class="container">
+    <div class="section-header reveal">
+      <p class="section-tag">02 // Mission Types</p>
+      <h2 class="section-title">WHAT I CAN <span class="accent-red">BUILD FOR YOU</span></h2>
+    </div>
+    <div class="services-grid stagger">
+      <article class="service-card">
+        <div class="service-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 9h6v6H9z"/><path d="M9 1v3M15 1v3M9 20v3M15 20v3M1 9h3M1 15h3M20 9h3M20 15h3"/></svg>
+        </div>
+        <h3 class="service-title">AI Agents &amp; RAG Systems</h3>
+        <p class="service-desc">Assistants and document intelligence grounded in <em>your</em> data — with verifiable citations, evaluation and guardrails. From corpus ingestion and vector search to a deployed, authenticated product.</p>
+        <p class="service-meta">Python · FastAPI · Vector DBs · Claude / GPT / DeepSeek</p>
+      </article>
+      <article class="service-card">
+        <div class="service-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 2 7l10 5 10-5-10-5z"/><path d="M2 12l10 5 10-5"/><path d="M2 17l10 5 10-5"/></svg>
+        </div>
+        <h3 class="service-title">Full-Stack Web Apps</h3>
+        <p class="service-desc">Multi-tenant SaaS, real-time dashboards and ops tools with enterprise-grade backends and polished frontends. Payments, invoicing and tax integrations (incl. SIN Bolivia) handled.</p>
+        <p class="service-meta">.NET / C# · React · TypeScript · PostgreSQL</p>
+      </article>
+      <article class="service-card">
+        <div class="service-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09a1.65 1.65 0 0 0-1-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09a1.65 1.65 0 0 0 1.51-1 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33h.01a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51h.01a1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82v.01a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+        </div>
+        <h3 class="service-title">Cloud, DevOps &amp; Automation</h3>
+        <p class="service-desc">Dockerized deployments on your VPS or cloud, CI/CD pipelines, reverse proxies and TLS, plus scraping and data pipelines that keep your systems fed automatically.</p>
+        <p class="service-meta">Docker · Traefik · GitHub Actions · Linux</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- TECH STACK -->
+<section id="stack">
+  <div class="container">
+    <div class="section-header reveal">
+      <p class="section-tag">03 // Arsenal</p>
+      <h2 class="section-title">TECH <span class="accent-red">STACK</span></h2>
+    </div>
+
+    <div class="stack-group reveal">
+      <p class="stack-group-label">AI &amp; Data</p>
+      <div class="tech-grid stagger">
+        <div class="tech-item" data-level="Production">Python</div>
+        <div class="tech-item" data-level="Production">FastAPI</div>
+        <div class="tech-item" data-level="Production">RAG Pipelines</div>
+        <div class="tech-item" data-level="Production">ChromaDB / Vectors</div>
+        <div class="tech-item" data-level="Production">Claude · GPT · DeepSeek</div>
+        <div class="tech-item" data-level="Production">Embeddings</div>
+        <div class="tech-item" data-level="Production">OCR (Tesseract)</div>
+        <div class="tech-item" data-level="Advanced">Prompt Engineering</div>
+      </div>
+    </div>
+
+    <div class="stack-group reveal">
+      <p class="stack-group-label">Backend</p>
+      <div class="tech-grid stagger">
+        <div class="tech-item" data-level="Advanced">.NET / C#</div>
+        <div class="tech-item" data-level="Advanced">EF Core</div>
+        <div class="tech-item" data-level="Advanced">Node.js</div>
+        <div class="tech-item" data-level="Advanced">REST APIs</div>
+        <div class="tech-item" data-level="Intermediate">GraphQL</div>
+        <div class="tech-item" data-level="Advanced">SQL Server</div>
+        <div class="tech-item" data-level="Advanced">PostgreSQL</div>
+      </div>
+    </div>
+
+    <div class="stack-group reveal">
+      <p class="stack-group-label">Frontend</p>
+      <div class="tech-grid stagger">
+        <div class="tech-item" data-level="Advanced">React</div>
+        <div class="tech-item" data-level="Advanced">TypeScript</div>
+        <div class="tech-item" data-level="Advanced">Tailwind CSS</div>
+        <div class="tech-item" data-level="Advanced">Responsive UI</div>
+      </div>
+    </div>
+
+    <div class="stack-group reveal">
+      <p class="stack-group-label">DevOps</p>
+      <div class="tech-grid stagger">
+        <div class="tech-item" data-level="Production">Docker</div>
+        <div class="tech-item" data-level="Production">Traefik / Nginx</div>
+        <div class="tech-item" data-level="Production">GitHub Actions</div>
+        <div class="tech-item" data-level="Advanced">Linux / VPS</div>
+        <div class="tech-item" data-level="Advanced">Git</div>
+      </div>
+    </div>
+
+    <div class="marquee reveal" aria-hidden="true">
+      <div class="marquee-track">
+        <span>RAG</span><span class="sep">//</span><span>LLM Agents</span><span class="sep">//</span><span>.NET</span><span class="sep">//</span><span>React</span><span class="sep">//</span><span>Python</span><span class="sep">//</span><span>FastAPI</span><span class="sep">//</span><span>TypeScript</span><span class="sep">//</span><span>PostgreSQL</span><span class="sep">//</span><span>Docker</span><span class="sep">//</span><span>Traefik</span><span class="sep">//</span><span>CI/CD</span><span class="sep">//</span><span>ChromaDB</span><span class="sep">//</span><span>Claude API</span><span class="sep">//</span><span>Embeddings</span><span class="sep">//</span><span>OCR</span><span class="sep">//</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" style="background: var(--bg-secondary);">
+  <div class="container">
+    <div class="section-header reveal">
+      <p class="section-tag">04 // Deployments</p>
+      <h2 class="section-title">FEATURED <span class="accent-red">PROJECTS</span></h2>
+    </div>
+    <div class="projects-grid">
+
+      <article class="project-card project-card--flagship reveal reveal-delay-1" data-url="https://legal.humerez.dev">
+        <div class="project-card-header">
+          <span class="project-number">PRJ—001</span>
+          <span class="project-badges">
+            <span class="project-status project-status--flagship">Flagship</span>
+            <span class="project-status project-status--live">Live</span>
+          </span>
+        </div>
+        <h3 class="project-title">Asesor Legal IA</h3>
+        <p class="project-desc">AI legal advisor for Bolivian law, in production with real users. Grounded RAG over 9 legal codes; multiple analysis modes (case strategy, legal opinions, bill drafting); per-customer authentication and isolated workspaces.</p>
+        <p class="project-outcome">4,170+ articles indexed — every citation links to the official text. Verifiable, not hallucinated.</p>
+        <div class="project-tags">
+          <span class="project-tag">Python</span>
+          <span class="project-tag">FastAPI</span>
+          <span class="project-tag">RAG</span>
+          <span class="project-tag">ChromaDB</span>
+          <span class="project-tag">LLM</span>
+          <span class="project-tag">Docker</span>
+        </div>
+        <a href="https://legal.humerez.dev" class="project-link" target="_blank" rel="noopener noreferrer" aria-label="Open Asesor Legal IA">Open Platform</a>
+      </article>
+
+      <article class="project-card reveal reveal-delay-2" data-url="https://humerez.dev/restaurant/login">
+        <div class="project-card-header">
+          <span class="project-number">PRJ—002</span>
+          <span class="project-badges"><span class="project-status project-status--live">Live</span></span>
+        </div>
+        <h3 class="project-title">Restaurant Hub</h3>
+        <p class="project-desc">End-to-end restaurant operations — live table map, order tracking, kitchen display and digital receipts, with SIN tax-compliance integration built for the Bolivian market.</p>
+        <p class="project-outcome">Runs the full dining-room → kitchen loop in real time.</p>
+        <div class="project-tags">
+          <span class="project-tag">React</span>
+          <span class="project-tag">Node.js</span>
+          <span class="project-tag">PostgreSQL</span>
+          <span class="project-tag">Redis</span>
+          <span class="project-tag">Real-time</span>
+        </div>
+        <a href="https://humerez.dev/restaurant/login" class="project-link" target="_blank" rel="noopener noreferrer" aria-label="View Restaurant Hub">View Project</a>
+      </article>
+
+      <article class="project-card reveal reveal-delay-3" data-url="https://humerez.dev/receipts/login">
+        <div class="project-card-header">
+          <span class="project-number">PRJ—003</span>
+          <span class="project-badges"><span class="project-status project-status--live">Live</span></span>
+        </div>
+        <h3 class="project-title">Debt &amp; Receipts Tracker</h3>
+        <p class="project-desc">Debt ledger for individuals and small businesses with digital receipt storage: who owes what, receipts attached as proof, pending vs settled — one clear picture.</p>
+        <p class="project-outcome">Paper receipts → searchable, shareable records.</p>
+        <div class="project-tags">
+          <span class="project-tag">React</span>
+          <span class="project-tag">Node.js</span>
+          <span class="project-tag">PostgreSQL</span>
+          <span class="project-tag">Docker</span>
+        </div>
+        <a href="https://humerez.dev/receipts/login" class="project-link" target="_blank" rel="noopener noreferrer" aria-label="View Debt & Receipts Tracker">View Project</a>
+      </article>
+
+      <article class="project-card reveal reveal-delay-4" data-url="#">
+        <div class="project-card-header">
+          <span class="project-number">PRJ—004</span>
+          <span class="project-badges"><span class="project-status project-status--dev">In Dev</span></span>
+        </div>
+        <h3 class="project-title">Condo Manager</h3>
+        <p class="project-desc">Building administration platform for LATAM condominiums — expense tracking, unit management, common-area bookings and resident communication for property admins.</p>
+        <p class="project-outcome">Next deployment in the pipeline.</p>
+        <div class="project-tags">
+          <span class="project-tag">.NET</span>
+          <span class="project-tag">React</span>
+          <span class="project-tag">PostgreSQL</span>
+          <span class="project-tag">SaaS</span>
+        </div>
+      </article>
+
+    </div>
+    <p class="projects-more reveal">More in the lab — insurance quoting, WhatsApp legal assistant, internal tooling → <a href="https://github.com/dhumerez" target="_blank" rel="noopener noreferrer">github.com/dhumerez</a></p>
+  </div>
+</section>
+
+<!-- BEYOND CODE -->
+<section id="beyond">
+  <div class="container">
+    <div class="section-header reveal">
+      <p class="section-tag">05 // Off-Duty</p>
+      <h2 class="section-title">BEYOND <span class="accent-red">CODE</span></h2>
+    </div>
+    <div class="interests-grid stagger">
+      <div class="interest-card">
+        <span class="interest-icon" aria-hidden="true">🤖</span>
+        <div class="interest-label">Gunpla</div>
+        <div class="interest-sub">Model Kit Builder</div>
+      </div>
+      <div class="interest-card">
+        <span class="interest-icon" aria-hidden="true">🎮</span>
+        <div class="interest-label">Gaming</div>
+        <div class="interest-sub">Dota 2 · CS2 · EA FC</div>
+      </div>
+      <div class="interest-card">
+        <span class="interest-icon" aria-hidden="true">✈️</span>
+        <div class="interest-label">Travel</div>
+        <div class="interest-sub">Explorer</div>
+      </div>
+      <div class="interest-card">
+        <span class="interest-icon" aria-hidden="true">🍜</span>
+        <div class="interest-label">Food</div>
+        <div class="interest-sub">Always Hungry</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact-section">
+  <div class="container">
+    <p class="section-tag reveal" style="justify-content: center;">06 // Open Channel</p>
+    <h2 class="contact-headline reveal reveal-delay-1">LET'S <span class="accent-red">BUILD</span> SOMETHING</h2>
+    <p class="contact-sub reveal reveal-delay-2">Open for freelance projects, AI engineering roles and SaaS partnerships — US, Europe and LATAM, fully remote (GMT-4). Direct line, no agencies in between.</p>
+    <div class="contact-links reveal reveal-delay-3">
+      <a href="mailto:humerezdiego1994@gmail.com" class="contact-link" aria-label="Send email to Diego Humerez">Email</a>
+      <a href="https://github.com/dhumerez" class="contact-link" target="_blank" rel="noopener noreferrer" aria-label="Diego Humerez on GitHub">GitHub</a>
+      <a href="https://linkedin.com/in/diego-humerez" class="contact-link" target="_blank" rel="noopener noreferrer" aria-label="Diego Humerez on LinkedIn">LinkedIn</a>
+    </div>
+    <form class="contact-form reveal reveal-delay-4" novalidate>
+      <div class="form-group">
+        <label for="contact-name" class="form-label">[ NAME ]</label>
+        <input type="text" id="contact-name" name="name" class="form-input" placeholder="Your name" required autocomplete="name">
+      </div>
+      <div class="form-group">
+        <label for="contact-email" class="form-label">[ EMAIL ]</label>
+        <input type="email" id="contact-email" name="email" class="form-input" placeholder="your@email.com" required autocomplete="email">
+      </div>
+      <div class="form-group">
+        <label for="contact-message" class="form-label">[ MESSAGE ]</label>
+        <textarea id="contact-message" name="message" class="form-input form-textarea" placeholder="Describe your project or inquiry..." required rows="5"></textarea>
+      </div>
+      <button type="submit" class="btn btn--primary form-submit">TRANSMIT MESSAGE</button>
+      <p class="form-hint">The button opens your email app — or write directly to <a href="mailto:humerezdiego1994@gmail.com">humerezdiego1994@gmail.com</a>.</p>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <p class="footer-text">© 2026 HUMEREZ.DEV — DESIGNED &amp; BUILT FROM LA PAZ, BOLIVIA · <a href="/">EN</a> · <a href="/es/" data-set-lang="es" hreflang="es">ES</a> · <a href="https://github.com/dhumerez/humerez.dev" target="_blank" rel="noopener noreferrer">VIEW SOURCE</a></p>
+  </div>
+</footer>
+
+<button class="back-to-top" id="backToTop" aria-label="Back to top" title="Back to top">
+  <span aria-hidden="true">▲</span>
+</button>
+
+</body>
+</html>

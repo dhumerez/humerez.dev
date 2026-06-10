@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Diego Humerez | Ingeniero de IA y Full-Stack — humerez.dev</title>
+
+<!-- SEO -->
+<meta name="description" content="Diego Humerez — ingeniero de IA y full-stack en La Paz, Bolivia. Construyo sistemas RAG, agentes LLM y aplicaciones web en producción (.NET, React, Python, FastAPI). Disponible para proyectos freelance y trabajo remoto en EE.UU., Europa y LATAM.">
+<meta name="author" content="Diego Humerez">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#0a0c10">
+<link rel="canonical" href="https://humerez.dev/es/">
+<link rel="alternate" hreflang="en" href="https://humerez.dev/">
+<link rel="alternate" hreflang="es" href="https://humerez.dev/es/">
+<link rel="alternate" hreflang="x-default" href="https://humerez.dev/">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://humerez.dev/es/">
+<meta property="og:site_name" content="humerez.dev">
+<meta property="og:title" content="Diego Humerez | Ingeniero de IA y Full-Stack">
+<meta property="og:description" content="Construyo sistemas RAG, agentes LLM y aplicaciones web en producción. Proyecto insignia: una plataforma legal con IA basada en 4.170+ artículos de la ley boliviana. Disponible para freelance.">
+<meta property="og:image" content="https://humerez.dev/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="es_ES">
+<meta property="og:locale:alternate" content="en_US">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Diego Humerez | Ingeniero de IA y Full-Stack">
+<meta name="twitter:description" content="Sistemas RAG, agentes LLM y aplicaciones web en producción — desde La Paz, Bolivia. Disponible para freelance.">
+<meta name="twitter:image" content="https://humerez.dev/assets/og-image.png">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="/assets/site.css">
+<script src="/assets/site.js" defer></script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://humerez.dev/#person",
+      "name": "Diego Humerez",
+      "alternateName": "dhumerez",
+      "jobTitle": "Ingeniero de Software — IA y Full-Stack",
+      "description": "Ingeniero de software en La Paz, Bolivia. Construye productos de inteligencia artificial — sistemas de generación aumentada por recuperación (RAG), agentes LLM e inteligencia documental — además de aplicaciones web full-stack con .NET, React, TypeScript, Python y FastAPI. Disponible para proyectos freelance y roles remotos en EE.UU., Europa y América Latina.",
+      "url": "https://humerez.dev/",
+      "email": "mailto:humerezdiego1994@gmail.com",
+      "image": "https://humerez.dev/assets/og-image.png",
+      "sameAs": [
+        "https://github.com/dhumerez",
+        "https://www.linkedin.com/in/diego-humerez"
+      ],
+      "address": { "@type": "PostalAddress", "addressLocality": "La Paz", "addressCountry": "BO" },
+      "nationality": { "@type": "Country", "name": "Bolivia" },
+      "knowsLanguage": [
+        { "@type": "Language", "name": "Spanish", "alternateName": "es" },
+        { "@type": "Language", "name": "English", "alternateName": "en" }
+      ],
+      "knowsAbout": [
+        "Inteligencia Artificial", "Generación Aumentada por Recuperación (RAG)", "Agentes LLM",
+        "Python", "FastAPI", ".NET", "C#", "React", "TypeScript", "Node.js",
+        "PostgreSQL", "SQL Server", "Docker", "Bases de datos vectoriales", "Prompt engineering",
+        "Tecnología legal", "Desarrollo SaaS"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://humerez.dev/#website",
+      "url": "https://humerez.dev/",
+      "name": "humerez.dev",
+      "description": "Portafolio de Diego Humerez — ingeniero de IA y full-stack en La Paz, Bolivia.",
+      "inLanguage": ["en", "es"],
+      "publisher": { "@id": "https://humerez.dev/#person" }
+    },
+    {
+      "@type": "ProfilePage",
+      "@id": "https://humerez.dev/es/#profilepage",
+      "url": "https://humerez.dev/es/",
+      "inLanguage": "es",
+      "isPartOf": { "@id": "https://humerez.dev/#website" },
+      "about": { "@id": "https://humerez.dev/#person" },
+      "mainEntity": { "@id": "https://humerez.dev/#person" }
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://humerez.dev/es/#projects",
+      "name": "Proyectos destacados de Diego Humerez",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "item": {
+            "@type": "SoftwareApplication",
+            "name": "Asesor Legal IA — plataforma legal con IA para la ley boliviana",
+            "url": "https://legal.humerez.dev",
+            "applicationCategory": "BusinessApplication",
+            "operatingSystem": "Web",
+            "description": "Plataforma legal con IA en producción: RAG fundamentado sobre 9 códigos legales bolivianos y 4.170+ artículos, donde cada respuesta cita el artículo exacto con enlaces a las fuentes oficiales.",
+            "author": { "@id": "https://humerez.dev/#person" }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "item": {
+            "@type": "SoftwareApplication",
+            "name": "Restaurant Hub",
+            "url": "https://humerez.dev/restaurant/login",
+            "applicationCategory": "BusinessApplication",
+            "operatingSystem": "Web",
+            "description": "Gestión de restaurantes en tiempo real: mapa de mesas, seguimiento de pedidos, pantalla de cocina, recibos digitales e integración con el SIN para el mercado boliviano.",
+            "author": { "@id": "https://humerez.dev/#person" }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "item": {
+            "@type": "SoftwareApplication",
+            "name": "Rastreador de Deudas y Recibos",
+            "url": "https://humerez.dev/receipts/login",
+            "applicationCategory": "FinanceApplication",
+            "operatingSystem": "Web",
+            "description": "Libro de deudas para personas y pequeñas empresas con almacenamiento digital de recibos — registra quién debe qué, con comprobantes como respaldo.",
+            "author": { "@id": "https://humerez.dev/#person" }
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+<div class="scroll-progress" aria-hidden="true"></div>
+
+<!-- NAV -->
+<nav class="site-nav" aria-label="Navegación principal">
+  <div class="container">
+    <a href="#" class="nav-logo">HUMEREZ</a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about">Sobre mí</a></li>
+      <li><a href="#services">Servicios</a></li>
+      <li><a href="#stack">Stack</a></li>
+      <li><a href="#projects">Proyectos</a></li>
+      <li><a href="#contact">Contacto</a></li>
+    </ul>
+    <div class="nav-status"><span class="dot"></span> DISPONIBLE PARA TRABAJAR</div>
+    <div class="lang-switch" aria-label="Idioma">
+      <span aria-hidden="true">[</span><a href="/" data-set-lang="en" hreflang="en" lang="en" title="English version">EN</a><span class="sep">|</span><span class="current" aria-current="true">ES</span><span aria-hidden="true">]</span>
+    </div>
+    <button class="nav-toggle" id="navToggle" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="navLinks">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<main id="main-content">
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="hero-bg" aria-hidden="true"></div>
+  <div class="hero-grid" aria-hidden="true"></div>
+  <div class="hero-shape hero-shape--1" aria-hidden="true"></div>
+  <div class="hero-shape hero-shape--2" aria-hidden="true"></div>
+  <div class="container hero-inner">
+    <div class="hero-content">
+      <p class="hero-label">Sistema en Línea — La Paz, Bolivia · GMT-4</p>
+      <h1 class="hero-title">
+        DIEGO
+        <span class="line-2">HUMEREZ</span>
+      </h1>
+      <p class="hero-role" aria-label="Ingeniero de IA, desarrollador full-stack, sistemas RAG y LLM"><span data-roles='["INGENIERO DE IA","DESARROLLADOR FULL-STACK","SISTEMAS RAG &amp; LLM","DISPONIBLE PARA FREELANCE"]'>INGENIERO DE IA</span><span class="cursor" aria-hidden="true"></span></p>
+      <p class="hero-subtitle">Construyo <strong>productos de IA que llegan a producción</strong> — generación aumentada por recuperación (RAG), agentes LLM y automatización — con ingeniería full-stack sólida en <strong>.NET, React, Python y FastAPI</strong>. Actualmente opero una plataforma legal con IA usada por profesionales en Bolivia.</p>
+      <div class="hero-ctas">
+        <a href="#projects" class="btn btn--primary">VER PROYECTOS</a>
+        <a href="#contact" class="btn btn--secondary">CONTRÁTAME</a>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <div class="hero-stat-value" data-count-to="5" data-suffix="+">5+</div>
+          <div class="hero-stat-label">Años de Experiencia</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-value" data-count-to="10" data-suffix="+">10+</div>
+          <div class="hero-stat-label">Proyectos Entregados</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-value" data-count-to="4170" data-suffix="+">4.170+</div>
+          <div class="hero-stat-label">Artículos Legales Indexados</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-value">ES / EN</div>
+          <div class="hero-stat-label">Totalmente Bilingüe</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MECHA -->
+    <div class="hero-mecha" aria-hidden="true">
+      <div class="mecha-ring mecha-ring--1"></div>
+      <div class="mecha-ring mecha-ring--2"></div>
+      <svg viewBox="0 0 400 460" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Ilustración de mecha estilo Gundam">
+        <defs>
+          <filter id="glowBlue" x="-60%" y="-60%" width="220%" height="220%">
+            <feGaussianBlur stdDeviation="2.2" result="b"/>
+            <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+          <filter id="glowRed" x="-60%" y="-60%" width="220%" height="220%">
+            <feGaussianBlur stdDeviation="2.4" result="b"/>
+            <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+          <linearGradient id="steel" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#222b3c"/>
+            <stop offset="1" stop-color="#141a26"/>
+          </linearGradient>
+          <linearGradient id="steelDark" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#161d2a"/>
+            <stop offset="1" stop-color="#0d1117"/>
+          </linearGradient>
+          <linearGradient id="gold" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#ffc14d"/>
+            <stop offset="1" stop-color="#d88a10"/>
+          </linearGradient>
+        </defs>
+
+        <ellipse cx="200" cy="210" rx="160" ry="150" fill="rgba(0,180,216,0.05)"/>
+        <polygon points="200,30 330,105 330,255 200,330 70,255 70,105" fill="none" stroke="rgba(0,180,216,0.14)" stroke-width="1"/>
+        <polygon points="200,52 310,116 310,244 200,308 90,244 90,116" fill="none" stroke="rgba(230,57,70,0.10)" stroke-width="1"/>
+
+        <g class="mecha-vfin">
+          <polygon points="190,128 58,60 84,44 198,112" fill="url(#gold)" stroke="#8a5d08" stroke-width="1.5"/>
+          <polygon points="210,128 342,60 316,44 202,112" fill="url(#gold)" stroke="#8a5d08" stroke-width="1.5"/>
+          <polygon points="200,102 216,124 200,140 184,124" fill="#e63946" stroke="#8f1d27" stroke-width="1.5" filter="url(#glowRed)"/>
+        </g>
+
+        <polygon points="200,64 250,84 272,114 276,152 252,148 200,142 148,148 124,152 128,114 150,84"
+                 fill="url(#steel)" stroke="#5b6b82" stroke-width="2"/>
+        <polygon points="192,68 208,68 212,140 188,140" fill="#1c2535" stroke="#5b6b82" stroke-width="1"/>
+
+        <polygon points="184,124 216,124 211,138 189,138" fill="#e63946" stroke="#8f1d27" stroke-width="1" filter="url(#glowRed)"/>
+
+        <polygon points="112,150 130,144 136,210 122,214 108,184" fill="url(#steelDark)" stroke="#5b6b82" stroke-width="1.5"/>
+        <polygon points="288,150 270,144 264,210 278,214 292,184" fill="url(#steelDark)" stroke="#5b6b82" stroke-width="1.5"/>
+        <polygon points="116,160 128,156 130,196 120,198" fill="url(#gold)" stroke="#8a5d08" stroke-width="1"/>
+        <polygon points="284,160 272,156 270,196 280,198" fill="url(#gold)" stroke="#8a5d08" stroke-width="1"/>
+
+        <polygon points="128,152 152,148 164,200 156,234 134,216 124,182" fill="url(#steel)" stroke="#5b6b82" stroke-width="2"/>
+        <polygon points="272,152 248,148 236,200 244,234 266,216 276,182" fill="url(#steel)" stroke="#5b6b82" stroke-width="2"/>
+
+        <polygon points="152,148 248,148 240,206 200,222 160,206" fill="url(#steelDark)" stroke="#39455c" stroke-width="1.5"/>
+
+        <g filter="url(#glowBlue)">
+          <polygon class="mecha-eye" points="158,171 188,165 188,181 162,185" fill="#00e5ff"/>
+          <polygon class="mecha-eye" points="242,171 212,165 212,181 238,185" fill="#00e5ff"/>
+        </g>
+        <polygon points="188,163 212,163 212,183 188,183" fill="#0d1117"/>
+        <polygon points="156,164 244,164 240,170 160,170" fill="#0a0e15"/>
+
+        <line class="mecha-scan" x1="156" y1="168" x2="244" y2="168" stroke="#00e5ff" stroke-width="2"/>
+
+        <polygon points="190,192 210,192 207,202 193,202" fill="#222b3c" stroke="#39455c" stroke-width="1"/>
+        <line x1="196" y1="194" x2="196" y2="200" stroke="#0d1117" stroke-width="1.5"/>
+        <line x1="204" y1="194" x2="204" y2="200" stroke="#0d1117" stroke-width="1.5"/>
+
+        <polygon points="183,214 217,214 208,244 192,244" fill="#e63946" stroke="#8f1d27" stroke-width="1.5"/>
+
+        <polygon points="180,244 220,244 224,266 176,266" fill="url(#steelDark)" stroke="#39455c" stroke-width="1.5"/>
+        <line x1="184" y1="252" x2="216" y2="252" stroke="#39455c" stroke-width="1"/>
+        <line x1="182" y1="259" x2="218" y2="259" stroke="#39455c" stroke-width="1"/>
+
+        <polygon points="176,266 120,276 96,318 150,330 178,300" fill="url(#steel)" stroke="#5b6b82" stroke-width="2"/>
+        <polygon points="224,266 280,276 304,318 250,330 222,300" fill="url(#steel)" stroke="#5b6b82" stroke-width="2"/>
+        <line x1="118" y1="290" x2="146" y2="286" stroke="#39455c" stroke-width="2"/>
+        <line x1="122" y1="300" x2="150" y2="296" stroke="#39455c" stroke-width="2"/>
+        <line x1="282" y1="290" x2="254" y2="286" stroke="#39455c" stroke-width="2"/>
+        <line x1="278" y1="300" x2="250" y2="296" stroke="#39455c" stroke-width="2"/>
+
+        <polygon points="178,268 222,268 236,306 200,336 164,306" fill="#b32837" stroke="#7d1722" stroke-width="2"/>
+        <polygon points="200,288 216,304 200,320 184,304" fill="#00b4d8" stroke="#04708a" stroke-width="1.5" filter="url(#glowBlue)"/>
+
+        <g class="mecha-lines" fill="none" stroke="rgba(155,173,196,0.5)" stroke-width="1">
+          <polyline points="150,84 162,100 162,128"/>
+          <polyline points="250,84 238,100 238,128"/>
+          <polyline points="128,114 144,120 148,140"/>
+          <polyline points="272,114 256,120 252,140"/>
+          <polyline points="164,306 178,312 200,316"/>
+          <polyline points="236,306 222,312 200,316"/>
+        </g>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- SOBRE MÍ -->
+<section id="about">
+  <div class="container">
+    <div class="section-header reveal">
+      <p class="section-tag">01 // Sobre mí</p>
+      <h2 class="section-title">PERFIL <span class="accent-red">DEL PILOTO</span></h2>
+    </div>
+    <div class="about-grid">
+      <div class="about-text reveal reveal--left reveal-delay-1">
+        <p>Soy <strong>Diego Humerez</strong>, <strong>ingeniero de software especializado en IA y full-stack</strong>, con base en La Paz, Bolivia. Diseño y entrego <strong>productos impulsados por inteligencia artificial</strong> — sistemas de generación aumentada por recuperación (RAG), agentes LLM e inteligencia documental — junto con la ingeniería full-stack que necesitan para llegar a producción: <strong>.NET, React, TypeScript, Python y FastAPI</strong>.</p>
+        <p>Mi proyecto insignia es <a href="https://legal.humerez.dev" target="_blank" rel="noopener noreferrer">Asesor Legal IA</a>, una plataforma legal con IA en producción para la ley boliviana: un pipeline RAG fundamentado sobre <strong>9 códigos legales y 4.170+ artículos</strong>, donde cada respuesta lleva citas verificables contra la fuente oficial — nada de leyes inventadas.</p>
+        <p>Antes de profundizar en IA pasé años entregando software empresarial, trabajando de forma remota con empresas de EE.UU. y construyendo SaaS para negocios de América Latina. Esa mezcla significa que no solo hago prototipos: entrego <strong>productos autenticados, contenedorizados y monitoreados</strong> sobre infraestructura real.</p>
+        <p>Fuera de servicio: armo Gunpla, juego Dota 2, busco comida callejera y planeo el próximo viaje.</p>
+      </div>
+      <div class="about-details reveal reveal--right reveal-delay-2">
+        <div class="about-detail-row">
+          <span class="about-detail-key">Nombre</span>
+          <span class="about-detail-val">Diego Humerez</span>
+        </div>
+        <div class="about-detail-row">
+          <span class="about-detail-key">Ubicación</span>
+          <span class="about-detail-val">La Paz, Bolivia (GMT-4)</span>
+        </div>
+        <div class="about-detail-row">
+          <span class="about-detail-key">Enfoque</span>
+          <span class="about-detail-val">Ingeniería de IA · Full-Stack</span>
+        </div>
+        <div class="about-detail-row">
+          <span class="about-detail-key">Mercados</span>
+          <span class="about-detail-val">EE.UU. · Europa · LATAM (remoto)</span>
+        </div>
+        <div class="about-detail-row">
+          <span class="about-detail-key">Idiomas</span>
+          <span class="about-detail-val">Español (nativo) · Inglés (fluido)</span>
+        </div>
+        <div class="about-detail-row">
+          <span class="about-detail-key">Disponibilidad</span>
+          <span class="about-detail-val accent-blue">Freelance y contratos — abierto</span>
+        </div>
+        <div class="about-detail-row">
+          <span class="about-detail-key">Tiempo de respuesta</span>
+          <span class="about-detail-val">&lt; 24 h</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICIOS -->
+<section id="services" style="background: var(--bg-secondary);">
+  <div class="container">
+    <div class="section-header reveal">
+      <p class="section-tag">02 // Tipos de Misión</p>
+      <h2 class="section-title">QUÉ PUEDO <span class="accent-red">CONSTRUIR PARA TI</span></h2>
+    </div>
+    <div class="services-grid stagger">
+      <article class="service-card">
+        <div class="service-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 9h6v6H9z"/><path d="M9 1v3M15 1v3M9 20v3M15 20v3M1 9h3M1 15h3M20 9h3M20 15h3"/></svg>
+        </div>
+        <h3 class="service-title">Agentes de IA y Sistemas RAG</h3>
+        <p class="service-desc">Asistentes e inteligencia documental fundamentados en <em>tus</em> datos — con citas verificables, evaluación y controles. Desde la ingesta del corpus y búsqueda vectorial hasta un producto desplegado y autenticado.</p>
+        <p class="service-meta">Python · FastAPI · Bases vectoriales · Claude / GPT / DeepSeek</p>
+      </article>
+      <article class="service-card">
+        <div class="service-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 2 7l10 5 10-5-10-5z"/><path d="M2 12l10 5 10-5"/><path d="M2 17l10 5 10-5"/></svg>
+        </div>
+        <h3 class="service-title">Aplicaciones Web Full-Stack</h3>
+        <p class="service-desc">SaaS multi-empresa, dashboards en tiempo real y herramientas operativas con backends de nivel empresarial y frontends pulidos. Pagos, facturación e integraciones tributarias (incl. SIN Bolivia).</p>
+        <p class="service-meta">.NET / C# · React · TypeScript · PostgreSQL</p>
+      </article>
+      <article class="service-card">
+        <div class="service-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09a1.65 1.65 0 0 0-1-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09a1.65 1.65 0 0 0 1.51-1 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33h.01a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51h.01a1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82v.01a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+        </div>
+        <h3 class="service-title">Cloud, DevOps y Automatización</h3>
+        <p class="service-desc">Despliegues con Docker en tu VPS o nube, pipelines CI/CD, proxies inversos y TLS, además de scraping y pipelines de datos que alimentan tus sistemas automáticamente.</p>
+        <p class="service-meta">Docker · Traefik · GitHub Actions · Linux</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- STACK -->
+<section id="stack">
+  <div class="container">
+    <div class="section-header reveal">
+      <p class="section-tag">03 // Arsenal</p>
+      <h2 class="section-title">STACK <span class="accent-red">TECNOLÓGICO</span></h2>
+    </div>
+
+    <div class="stack-group reveal">
+      <p class="stack-group-label">IA y Datos</p>
+      <div class="tech-grid stagger">
+        <div class="tech-item" data-level="Producción">Python</div>
+        <div class="tech-item" data-level="Producción">FastAPI</div>
+        <div class="tech-item" data-level="Producción">Pipelines RAG</div>
+        <div class="tech-item" data-level="Producción">ChromaDB / Vectores</div>
+        <div class="tech-item" data-level="Producción">Claude · GPT · DeepSeek</div>
+        <div class="tech-item" data-level="Producción">Embeddings</div>
+        <div class="tech-item" data-level="Producción">OCR (Tesseract)</div>
+        <div class="tech-item" data-level="Avanzado">Prompt Engineering</div>
+      </div>
+    </div>
+
+    <div class="stack-group reveal">
+      <p class="stack-group-label">Backend</p>
+      <div class="tech-grid stagger">
+        <div class="tech-item" data-level="Avanzado">.NET / C#</div>
+        <div class="tech-item" data-level="Avanzado">EF Core</div>
+        <div class="tech-item" data-level="Avanzado">Node.js</div>
+        <div class="tech-item" data-level="Avanzado">APIs REST</div>
+        <div class="tech-item" data-level="Intermedio">GraphQL</div>
+        <div class="tech-item" data-level="Avanzado">SQL Server</div>
+        <div class="tech-item" data-level="Avanzado">PostgreSQL</div>
+      </div>
+    </div>
+
+    <div class="stack-group reveal">
+      <p class="stack-group-label">Frontend</p>
+      <div class="tech-grid stagger">
+        <div class="tech-item" data-level="Avanzado">React</div>
+        <div class="tech-item" data-level="Avanzado">TypeScript</div>
+        <div class="tech-item" data-level="Avanzado">Tailwind CSS</div>
+        <div class="tech-item" data-level="Avanzado">UI Responsiva</div>
+      </div>
+    </div>
+
+    <div class="stack-group reveal">
+      <p class="stack-group-label">DevOps</p>
+      <div class="tech-grid stagger">
+        <div class="tech-item" data-level="Producción">Docker</div>
+        <div class="tech-item" data-level="Producción">Traefik / Nginx</div>
+        <div class="tech-item" data-level="Producción">GitHub Actions</div>
+        <div class="tech-item" data-level="Avanzado">Linux / VPS</div>
+        <div class="tech-item" data-level="Avanzado">Git</div>
+      </div>
+    </div>
+
+    <div class="marquee reveal" aria-hidden="true">
+      <div class="marquee-track">
+        <span>RAG</span><span class="sep">//</span><span>Agentes LLM</span><span class="sep">//</span><span>.NET</span><span class="sep">//</span><span>React</span><span class="sep">//</span><span>Python</span><span class="sep">//</span><span>FastAPI</span><span class="sep">//</span><span>TypeScript</span><span class="sep">//</span><span>PostgreSQL</span><span class="sep">//</span><span>Docker</span><span class="sep">//</span><span>Traefik</span><span class="sep">//</span><span>CI/CD</span><span class="sep">//</span><span>ChromaDB</span><span class="sep">//</span><span>Claude API</span><span class="sep">//</span><span>Embeddings</span><span class="sep">//</span><span>OCR</span><span class="sep">//</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROYECTOS -->
+<section id="projects" style="background: var(--bg-secondary);">
+  <div class="container">
+    <div class="section-header reveal">
+      <p class="section-tag">04 // Despliegues</p>
+      <h2 class="section-title">PROYECTOS <span class="accent-red">DESTACADOS</span></h2>
+    </div>
+    <div class="projects-grid">
+
+      <article class="project-card project-card--flagship reveal reveal-delay-1" data-url="https://legal.humerez.dev">
+        <div class="project-card-header">
+          <span class="project-number">PRJ—001</span>
+          <span class="project-badges">
+            <span class="project-status project-status--flagship">Insignia</span>
+            <span class="project-status project-status--live">En Vivo</span>
+          </span>
+        </div>
+        <h3 class="project-title">Asesor Legal IA</h3>
+        <p class="project-desc">Asesor legal con IA para la ley boliviana, en producción con usuarios reales. RAG fundamentado sobre 9 códigos legales; múltiples modos de análisis (estrategia de casos, dictámenes, proyectos de ley); autenticación por cliente y espacios de trabajo aislados.</p>
+        <p class="project-outcome">4.170+ artículos indexados — cada cita enlaza al texto oficial. Verificable, no inventado.</p>
+        <div class="project-tags">
+          <span class="project-tag">Python</span>
+          <span class="project-tag">FastAPI</span>
+          <span class="project-tag">RAG</span>
+          <span class="project-tag">ChromaDB</span>
+          <span class="project-tag">LLM</span>
+          <span class="project-tag">Docker</span>
+        </div>
+        <a href="https://legal.humerez.dev" class="project-link" target="_blank" rel="noopener noreferrer" aria-label="Abrir Asesor Legal IA">Abrir Plataforma</a>
+      </article>
+
+      <article class="project-card reveal reveal-delay-2" data-url="https://humerez.dev/restaurant/login">
+        <div class="project-card-header">
+          <span class="project-number">PRJ—002</span>
+          <span class="project-badges"><span class="project-status project-status--live">En Vivo</span></span>
+        </div>
+        <h3 class="project-title">Restaurant Hub</h3>
+        <p class="project-desc">Operación de restaurantes de extremo a extremo — mapa de mesas en vivo, seguimiento de pedidos, pantalla de cocina y recibos digitales, con integración de cumplimiento tributario (SIN) para el mercado boliviano.</p>
+        <p class="project-outcome">Maneja el ciclo completo salón → cocina en tiempo real.</p>
+        <div class="project-tags">
+          <span class="project-tag">React</span>
+          <span class="project-tag">Node.js</span>
+          <span class="project-tag">PostgreSQL</span>
+          <span class="project-tag">Redis</span>
+          <span class="project-tag">Tiempo real</span>
+        </div>
+        <a href="https://humerez.dev/restaurant/login" class="project-link" target="_blank" rel="noopener noreferrer" aria-label="Ver Restaurant Hub">Ver Proyecto</a>
+      </article>
+
+      <article class="project-card reveal reveal-delay-3" data-url="https://humerez.dev/receipts/login">
+        <div class="project-card-header">
+          <span class="project-number">PRJ—003</span>
+          <span class="project-badges"><span class="project-status project-status--live">En Vivo</span></span>
+        </div>
+        <h3 class="project-title">Rastreador de Deudas y Recibos</h3>
+        <p class="project-desc">Libro de deudas para personas y pequeñas empresas con almacenamiento digital de recibos: quién debe qué, comprobantes adjuntos como respaldo, pendientes vs saldadas — un panorama claro.</p>
+        <p class="project-outcome">Recibos de papel → registros buscables y compartibles.</p>
+        <div class="project-tags">
+          <span class="project-tag">React</span>
+          <span class="project-tag">Node.js</span>
+          <span class="project-tag">PostgreSQL</span>
+          <span class="project-tag">Docker</span>
+        </div>
+        <a href="https://humerez.dev/receipts/login" class="project-link" target="_blank" rel="noopener noreferrer" aria-label="Ver Rastreador de Deudas y Recibos">Ver Proyecto</a>
+      </article>
+
+      <article class="project-card reveal reveal-delay-4" data-url="#">
+        <div class="project-card-header">
+          <span class="project-number">PRJ—004</span>
+          <span class="project-badges"><span class="project-status project-status--dev">En Desarrollo</span></span>
+        </div>
+        <h3 class="project-title">Condo Manager</h3>
+        <p class="project-desc">Plataforma de administración de edificios para condominios de LATAM — control de gastos, gestión de unidades, reservas de áreas comunes y comunicación con residentes.</p>
+        <p class="project-outcome">Próximo despliegue en la fila.</p>
+        <div class="project-tags">
+          <span class="project-tag">.NET</span>
+          <span class="project-tag">React</span>
+          <span class="project-tag">PostgreSQL</span>
+          <span class="project-tag">SaaS</span>
+        </div>
+      </article>
+
+    </div>
+    <p class="projects-more reveal">Más en el laboratorio — cotizador de seguros, asistente legal por WhatsApp, herramientas internas → <a href="https://github.com/dhumerez" target="_blank" rel="noopener noreferrer">github.com/dhumerez</a></p>
+  </div>
+</section>
+
+<!-- MÁS ALLÁ DEL CÓDIGO -->
+<section id="beyond">
+  <div class="container">
+    <div class="section-header reveal">
+      <p class="section-tag">05 // Fuera de Servicio</p>
+      <h2 class="section-title">MÁS ALLÁ <span class="accent-red">DEL CÓDIGO</span></h2>
+    </div>
+    <div class="interests-grid stagger">
+      <div class="interest-card">
+        <span class="interest-icon" aria-hidden="true">🤖</span>
+        <div class="interest-label">Gunpla</div>
+        <div class="interest-sub">Constructor de Maquetas</div>
+      </div>
+      <div class="interest-card">
+        <span class="interest-icon" aria-hidden="true">🎮</span>
+        <div class="interest-label">Videojuegos</div>
+        <div class="interest-sub">Dota 2 · CS2 · EA FC</div>
+      </div>
+      <div class="interest-card">
+        <span class="interest-icon" aria-hidden="true">✈️</span>
+        <div class="interest-label">Viajes</div>
+        <div class="interest-sub">Explorador</div>
+      </div>
+      <div class="interest-card">
+        <span class="interest-icon" aria-hidden="true">🍜</span>
+        <div class="interest-label">Comida</div>
+        <div class="interest-sub">Siempre con Hambre</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section id="contact" class="contact-section">
+  <div class="container">
+    <p class="section-tag reveal" style="justify-content: center;">06 // Canal Abierto</p>
+    <h2 class="contact-headline reveal reveal-delay-1">CONSTRUYAMOS <span class="accent-red">ALGO</span> JUNTOS</h2>
+    <p class="contact-sub reveal reveal-delay-2">Abierto a proyectos freelance, roles de ingeniería de IA y alianzas SaaS — EE.UU., Europa y LATAM, 100% remoto (GMT-4). Línea directa, sin agencias de por medio.</p>
+    <div class="contact-links reveal reveal-delay-3">
+      <a href="mailto:humerezdiego1994@gmail.com" class="contact-link" aria-label="Enviar correo a Diego Humerez">Email</a>
+      <a href="https://github.com/dhumerez" class="contact-link" target="_blank" rel="noopener noreferrer" aria-label="Diego Humerez en GitHub">GitHub</a>
+      <a href="https://linkedin.com/in/diego-humerez" class="contact-link" target="_blank" rel="noopener noreferrer" aria-label="Diego Humerez en LinkedIn">LinkedIn</a>
+    </div>
+    <form class="contact-form reveal reveal-delay-4" novalidate>
+      <div class="form-group">
+        <label for="contact-name" class="form-label">[ NOMBRE ]</label>
+        <input type="text" id="contact-name" name="name" class="form-input" placeholder="Tu nombre" required autocomplete="name">
+      </div>
+      <div class="form-group">
+        <label for="contact-email" class="form-label">[ CORREO ]</label>
+        <input type="email" id="contact-email" name="email" class="form-input" placeholder="tu@correo.com" required autocomplete="email">
+      </div>
+      <div class="form-group">
+        <label for="contact-message" class="form-label">[ MENSAJE ]</label>
+        <textarea id="contact-message" name="message" class="form-input form-textarea" placeholder="Describe tu proyecto o consulta..." required rows="5"></textarea>
+      </div>
+      <button type="submit" class="btn btn--primary form-submit">ENVIAR MENSAJE</button>
+      <p class="form-hint">El botón abre tu app de correo — o escríbeme directo a <a href="mailto:humerezdiego1994@gmail.com">humerezdiego1994@gmail.com</a>.</p>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <p class="footer-text">© 2026 HUMEREZ.DEV — DISEÑADO Y CONSTRUIDO DESDE LA PAZ, BOLIVIA · <a href="/" data-set-lang="en" hreflang="en">EN</a> · <a href="/es/">ES</a> · <a href="https://github.com/dhumerez/humerez.dev" target="_blank" rel="noopener noreferrer">VER CÓDIGO</a></p>
+  </div>
+</footer>
+
+<button class="back-to-top" id="backToTop" aria-label="Volver arriba" title="Volver arriba">
+  <span aria-hidden="true">▲</span>
+</button>
+
+</body>
+</html>
