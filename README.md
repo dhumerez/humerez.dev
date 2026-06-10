@@ -44,11 +44,15 @@ deploy.sh              server-side deploy (runs via the host webhook listener)
 
 ## Deploys
 
-Push to `master` deploys twice over (idempotent, same content):
+Push to `master` → the host webhook listener (`/opt/webhook`, same pattern as
+the other apps on the box) runs `deploy.sh` in `/opt/apps/humerez-landing`:
+`git fetch` + `reset --hard origin/master`, then rsync `site/` →
+`/opt/traefik/landing/site/`. Verified end-to-end.
 
-1. **GitHub Action**: rsyncs `site/` → `/opt/traefik/landing/site/` (secret `SSH_PRIVATE_KEY`).
-2. **Host webhook** (`/opt/webhook`, shared pattern with the other apps): runs
-   `deploy.sh` in `/opt/apps/humerez-landing` (git pull + rsync to the same target).
+(A GitHub Actions workflow used to exist but the account has Actions locked by
+a billing issue, so every run failed; it was removed in favor of the webhook.
+Manual fallback: run `bash deploy.sh` on the server, or rsync/scp `site/` to
+`/opt/traefik/landing/site/` yourself.)
 
 Serving: `nginx` container (`landing` service in `/opt/traefik/docker-compose.yml`)
 mounts `/opt/traefik/landing/site` as its docroot behind Traefik
