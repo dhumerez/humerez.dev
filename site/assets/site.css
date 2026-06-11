@@ -381,13 +381,54 @@ nav.site-nav .container {
   margin-top: 0.2rem;
 }
 
-/* === HERO MECHA === */
+/* === HERO STARFIELD (canvas) === */
+.hero-stars {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+/* === HERO 3D PERSPECTIVE FLOOR === */
+.hero-floor {
+  position: absolute;
+  left: -25%;
+  right: -25%;
+  bottom: -14%;
+  height: 44%;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(0,180,216,0.16) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,180,216,0.16) 1px, transparent 1px);
+  background-size: 52px 52px;
+  transform: perspective(620px) rotateX(72deg);
+  transform-origin: 50% 0;
+  animation: floor-scroll 14s linear infinite;
+  mask-image: linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.75) 35%, transparent 96%);
+  -webkit-mask-image: linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.75) 35%, transparent 96%);
+}
+@keyframes floor-scroll {
+  to { background-position: 0 52px, 0 0; }
+}
+
+/* === HERO MECHA (3D rig) === */
 .hero-mecha {
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   min-height: 420px;
+  perspective: 900px;
+}
+.mecha-rig {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform-style: preserve-3d;
+  will-change: transform;
 }
 .hero-mecha svg {
   width: min(380px, 80%);
@@ -409,6 +450,31 @@ nav.site-nav .container {
 .mecha-ring--1 { width: 420px; height: 420px; animation: ring-spin 26s linear infinite; border-style: dashed; }
 .mecha-ring--2 { width: 510px; height: 510px; border-color: rgba(230,57,70,0.12); animation: ring-spin 40s linear infinite reverse; }
 @keyframes ring-spin { to { transform: rotate(360deg); } }
+/* radar sweep arc */
+.mecha-sweep {
+  position: absolute;
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+  pointer-events: none;
+  background: conic-gradient(from 0deg, rgba(0,180,216,0.22), rgba(0,180,216,0.05) 55deg, transparent 70deg);
+  mask-image: radial-gradient(circle, transparent 54%, black 56%, black 99%, transparent 100%);
+  -webkit-mask-image: radial-gradient(circle, transparent 54%, black 56%, black 99%, transparent 100%);
+  animation: ring-spin 5s linear infinite;
+}
+
+/* thruster flames */
+.mecha-thruster {
+  transform-box: fill-box;
+  transform-origin: 50% 0%;
+  animation: thrust-flicker 0.16s ease-in-out infinite alternate;
+}
+.mecha-thruster--l { animation-duration: 0.21s; }
+.mecha-thruster--r { animation-duration: 0.24s; }
+@keyframes thrust-flicker {
+  from { transform: scaleY(0.7);  opacity: 0.5; }
+  to   { transform: scaleY(1.18); opacity: 0.95; }
+}
 
 /* SVG part animations */
 .mecha-eye { animation: eye-pulse 2.6s ease-in-out infinite; }
@@ -1151,8 +1217,10 @@ a:focus-visible, button:focus-visible {
 @media (max-width: 1024px) {
   .hero-inner { grid-template-columns: 1fr; }
   .hero-mecha { order: -1; min-height: 0; margin-bottom: 1rem; }
+  .mecha-rig { min-height: 0; }
   .hero-mecha svg { width: min(240px, 60%); }
-  .mecha-ring { display: none; }
+  .mecha-ring, .mecha-sweep { display: none; }
+  .hero-floor { height: 30%; bottom: -8%; }
   .services-grid { grid-template-columns: 1fr; }
 }
 @media (max-width: 900px) {

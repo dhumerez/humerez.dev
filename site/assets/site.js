@@ -145,6 +145,107 @@
     });
   }, { passive: true });
 
+  /* ============ HERO: STARFIELD + 3D TILT ============ */
+  var heroEl = document.querySelector('.hero');
+  var mx = 0, my = 0; // shared mouse offset, -0.5..0.5
+
+  var starsCanvas = document.querySelector('.hero-stars');
+  if (starsCanvas && heroEl && starsCanvas.getContext) {
+    var ctx = starsCanvas.getContext('2d');
+    var dpr = Math.min(window.devicePixelRatio || 1, 2);
+    var stars = [], starsRunning = false, heroVisible = true;
+
+    var sizeStars = function () {
+      var w = heroEl.clientWidth, h = heroEl.clientHeight;
+      starsCanvas.width = w * dpr;
+      starsCanvas.height = h * dpr;
+      starsCanvas.style.width = w + 'px';
+      starsCanvas.style.height = h + 'px';
+      var n = Math.min(130, Math.max(40, Math.floor(w / 11)));
+      stars = [];
+      for (var i = 0; i < n; i++) {
+        var roll = Math.random();
+        stars.push({
+          x: Math.random() * starsCanvas.width,
+          y: Math.random() * starsCanvas.height,
+          z: 0.25 + Math.random() * 0.75,
+          r: 0.6 + Math.random() * 1.5,
+          p: Math.random() * Math.PI * 2,
+          s: 0.4 + Math.random() * 1.2,
+          c: roll < 0.08 ? '230,57,70' : (roll < 0.22 ? '0,180,216' : '155,173,196')
+        });
+      }
+    };
+
+    var drawStars = function (t) {
+      ctx.clearRect(0, 0, starsCanvas.width, starsCanvas.height);
+      for (var i = 0; i < stars.length; i++) {
+        var st = stars[i];
+        if (starsRunning) {
+          st.y -= st.s * st.z * 0.3 * dpr;
+          if (st.y < -4) { st.y = starsCanvas.height + 4; st.x = Math.random() * starsCanvas.width; }
+        }
+        var a = 0.2 + 0.4 * st.z + Math.sin(t / 700 * st.s + st.p) * 0.18;
+        ctx.beginPath();
+        ctx.arc(st.x + mx * 26 * st.z * dpr, st.y + my * 18 * st.z * dpr, st.r * st.z * dpr, 0, 6.2832);
+        ctx.fillStyle = 'rgba(' + st.c + ',' + Math.max(0.05, a).toFixed(3) + ')';
+        ctx.fill();
+      }
+      if (starsRunning && heroVisible && !document.hidden) requestAnimationFrame(drawStars);
+    };
+
+    sizeStars();
+    if (reducedMotion) {
+      drawStars(0); // single static frame
+    } else {
+      starsRunning = true;
+      requestAnimationFrame(drawStars);
+      if ('IntersectionObserver' in window) {
+        new IntersectionObserver(function (entries) {
+          var wasVisible = heroVisible;
+          heroVisible = entries[0].isIntersecting;
+          if (heroVisible && !wasVisible) requestAnimationFrame(drawStars);
+        }).observe(heroEl);
+      }
+      document.addEventListener('visibilitychange', function () {
+        if (!document.hidden && heroVisible) requestAnimationFrame(drawStars);
+      });
+      var resizeT;
+      window.addEventListener('resize', function () {
+        clearTimeout(resizeT);
+        resizeT = setTimeout(sizeStars, 200);
+      });
+    }
+  }
+
+  var rig = document.querySelector('.mecha-rig');
+  if (heroEl && window.matchMedia('(pointer: fine)').matches && !reducedMotion) {
+    var tiltX = 0, tiltY = 0, curX = 0, curY = 0, tiltRaf = null;
+    var tiltLoop = function () {
+      curX += (tiltX - curX) * 0.08;
+      curY += (tiltY - curY) * 0.08;
+      if (rig) rig.style.transform = 'rotateY(' + curX.toFixed(2) + 'deg) rotateX(' + curY.toFixed(2) + 'deg)';
+      if (Math.abs(tiltX - curX) > 0.02 || Math.abs(tiltY - curY) > 0.02) {
+        tiltRaf = requestAnimationFrame(tiltLoop);
+      } else {
+        tiltRaf = null;
+      }
+    };
+    heroEl.addEventListener('mousemove', function (e) {
+      var r = heroEl.getBoundingClientRect();
+      var nx = (e.clientX - r.left) / r.width - 0.5;
+      var ny = (e.clientY - r.top) / r.height - 0.5;
+      mx = nx; my = ny;
+      tiltX = nx * 16;
+      tiltY = -ny * 12;
+      if (!tiltRaf) tiltRaf = requestAnimationFrame(tiltLoop);
+    });
+    heroEl.addEventListener('mouseleave', function () {
+      mx = 0; my = 0; tiltX = 0; tiltY = 0;
+      if (!tiltRaf) tiltRaf = requestAnimationFrame(tiltLoop);
+    });
+  }
+
   /* ============ HERO: GLITCH + MECHA DRAW ============ */
   window.addEventListener('load', function () {
     if (reducedMotion) return;

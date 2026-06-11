@@ -228,7 +228,9 @@
 <!-- HERO -->
 <section class="hero" id="hero">
   <div class="hero-bg" aria-hidden="true"></div>
+  <canvas class="hero-stars" aria-hidden="true"></canvas>
   <div class="hero-grid" aria-hidden="true"></div>
+  <div class="hero-floor" aria-hidden="true"></div>
   <div class="hero-shape hero-shape--1" aria-hidden="true"></div>
   <div class="hero-shape hero-shape--2" aria-hidden="true"></div>
   <div class="container hero-inner">
@@ -266,8 +268,10 @@
 
     <!-- MECHA -->
     <div class="hero-mecha" aria-hidden="true">
+      <div class="mecha-rig">
       <div class="mecha-ring mecha-ring--1"></div>
       <div class="mecha-ring mecha-ring--2"></div>
+      <div class="mecha-sweep"></div>
       <svg viewBox="0 0 400 460" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Gundam-style mecha illustration">
         <defs>
           <filter id="glowBlue" x="-60%" y="-60%" width="220%" height="220%">
@@ -289,6 +293,11 @@
           <linearGradient id="gold" x1="0" y1="0" x2="0" y2="1">
             <stop offset="0" stop-color="#ffc14d"/>
             <stop offset="1" stop-color="#d88a10"/>
+          </linearGradient>
+          <linearGradient id="flame" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#bdf3ff"/>
+            <stop offset="0.45" stop-color="#00b4d8"/>
+            <stop offset="1" stop-color="#00b4d8" stop-opacity="0"/>
           </linearGradient>
         </defs>
 
@@ -366,6 +375,13 @@
         <!-- cockpit gem -->
         <polygon points="200,288 216,304 200,320 184,304" fill="#00b4d8" stroke="#04708a" stroke-width="1.5" filter="url(#glowBlue)"/>
 
+        <!-- thrusters -->
+        <g opacity="0.85">
+          <polygon class="mecha-thruster" points="190,338 210,338 200,367" fill="url(#flame)"/>
+          <polygon class="mecha-thruster mecha-thruster--l" points="117,332 133,332 125,353" fill="url(#flame)"/>
+          <polygon class="mecha-thruster mecha-thruster--r" points="267,332 283,332 275,353" fill="url(#flame)"/>
+        </g>
+
         <!-- panel detail lines (drawn on load) -->
         <g class="mecha-lines" fill="none" stroke="rgba(155,173,196,0.5)" stroke-width="1">
           <polyline points="150,84 162,100 162,128"/>
@@ -376,6 +392,7 @@
           <polyline points="236,306 222,312 200,316"/>
         </g>
       </svg>
+      </div>
     </div>
   </div>
 </section>

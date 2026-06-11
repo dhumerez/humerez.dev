@@ -11,7 +11,7 @@ Live: https://humerez.dev · Spanish: https://humerez.dev/es/
 site/                  ← everything that gets deployed (document root)
   index.html           English page (canonical, x-default)
   es/index.html        Spanish page
-  assets/site.css      shared styles (animations, HUD theme, reduced-motion aware)
+  assets/site.css      shared styles (3D hero rig, starfield, HUD theme, reduced-motion aware)
   assets/site.js       shared behavior (reveals, typewriter, counters, tilt, language)
   assets/og-image.png  social card (1200×630)
   assets/favicon.svg / apple-touch-icon.png · favicon.ico (root)
