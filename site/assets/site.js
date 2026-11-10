@@ -36,6 +36,161 @@
     try { if (!localStorage.getItem(LANG_KEY)) localStorage.setItem(LANG_KEY, 'es'); } catch (e) {}
   }
 
+  /* =====================================================
+     v4 DECORATIVE LAYERS — injected here (not in the HTML) so the
+     EN/ES pages stay in sync and crawlers see only real content.
+     ===================================================== */
+  var root = document.documentElement;
+  var ES = pageLang === 'es';
+  var el = function (tag, cls, html) {
+    var n = document.createElement(tag);
+    if (cls) n.className = cls;
+    if (html) n.innerHTML = html;
+    n.setAttribute('aria-hidden', 'true');
+    return n;
+  };
+
+  /* ---- boot shutter (class "boot" comes from the inline head script) ---- */
+  if (root.classList.contains('boot')) {
+    var shutter = el('div', 'boot-shutter', '<i></i><i></i><b></b><span>HUMEREZ.DEV // ' + (ES ? 'SISTEMA EN LÍNEA' : 'SYSTEM ONLINE') + '</span>');
+    document.body.appendChild(shutter);
+    root.style.setProperty('--boot', '0.95s');
+    root.classList.remove('boot');
+    setTimeout(function () { if (shutter.parentNode) shutter.parentNode.removeChild(shutter); }, 1700);
+  }
+
+  var heroBox = document.querySelector('.hero');
+  var heroTitleEl = document.querySelector('.hero-title');
+
+  /* ---- kinetic title: one span per letter, staggered ---- */
+  if (heroTitleEl && !reducedMotion) {
+    heroTitleEl.setAttribute('aria-label', heroTitleEl.textContent.replace(/\s+/g, ' ').trim());
+    var chIdx = 0;
+    var textNodes = [], tw = document.createTreeWalker(heroTitleEl, NodeFilter.SHOW_TEXT, null), tn;
+    while ((tn = tw.nextNode())) textNodes.push(tn);
+    textNodes.forEach(function (node) {
+      var frag = document.createDocumentFragment();
+      node.nodeValue.split('').forEach(function (ch) {
+        if (!ch.trim()) { frag.appendChild(document.createTextNode(ch)); return; }
+        var s = el('span', 'ch');
+        s.textContent = ch;
+        s.style.animationDelay = 'calc(var(--boot, 0s) + ' + (0.1 + chIdx * 0.05).toFixed(2) + 's)';
+        chIdx++;
+        frag.appendChild(s);
+      });
+      node.parentNode.replaceChild(frag, node);
+    });
+  }
+
+  /* ---- giant outline type behind the hero ---- */
+  if (heroBox) {
+    var ghostText = (ES
+      ? 'FORWARD DEPLOYED ENGINEER // IMPLEMENTACIÓN DE IA // DESARROLLO DE SOFTWARE // '
+      : 'FORWARD DEPLOYED ENGINEER // AI IMPLEMENTATION // SOFTWARE DEVELOPMENT // ');
+    var ghost = el('div', 'hero-ghost', '<div>' + ghostText + ghostText + '</div>');
+    var heroInner = heroBox.querySelector('.hero-inner');
+    heroBox.insertBefore(ghost, heroInner);
+  }
+
+  /* ---- mecha HUD: tick ring, target brackets, unit tag, live deploy log ---- */
+  var rigEl = document.querySelector('.mecha-rig');
+  if (rigEl) {
+    rigEl.appendChild(el('div', 'hud-wrap', ''));
+    rigEl.lastChild.outerHTML =
+      '<svg class="mecha-hud" viewBox="0 0 560 560" aria-hidden="true" focusable="false">' +
+        '<circle class="hud-ticks" cx="280" cy="280" r="272"/>' +
+        '<path class="hud-brackets" d="M58 112V58h54M448 58h54v54M502 448v54h-54M112 502H58v-54"/>' +
+        '<path class="hud-cross" d="M280 14v30M280 516v30M14 280h30M516 280h30"/>' +
+      '</svg>';
+    rigEl.appendChild(el('div', 'hud-tag', (ES ? 'UNIDAD' : 'UNIT') + ' <b>FDE-01</b> // ' + (ES ? 'MODO' : 'MODE') + ' <b>FORWARD DEPLOYED</b>'));
+
+    var logLines = ES
+      ? ['> fde embed --equipo cliente', '[OK] procesos y datos mapeados', '> build asistente-rag --datos reales', '[OK] 7.600 artículos indexados', '> deploy --env produccion', '[OK] en producción, equipo capacitado']
+      : ['> fde embed --team client', '[OK] processes and data mapped', '> build rag-assistant --data real', '[OK] 7,600 articles indexed', '> deploy --env production', '[OK] live, team onboarded'];
+    var logBox = el('div', 'hero-log', '<div class="hero-log-head"><span>DEPLOY LOG</span><em>● LIVE</em></div><div class="hero-log-body"></div>');
+    rigEl.appendChild(logBox);
+    var logBody = logBox.querySelector('.hero-log-body');
+    var renderLine = function (text) {
+      var p = document.createElement('p');
+      p.className = text.charAt(0) === '>' ? 'cmd' : 'ok';
+      p.textContent = text;
+      logBody.appendChild(p);
+    };
+    if (reducedMotion) {
+      logLines.forEach(renderLine);
+    } else {
+      var logIdx = 0;
+      var logTick = function () {
+        var onScreen = !document.hidden && heroBox && heroBox.getBoundingClientRect().bottom > 0;
+        var delay = 850;
+        if (onScreen) {
+          if (logIdx >= logLines.length) { logBody.innerHTML = ''; logIdx = 0; delay = 500; }
+          else {
+            renderLine(logLines[logIdx++]);
+            if (logIdx === logLines.length) delay = 3200;
+          }
+        }
+        setTimeout(logTick, delay);
+      };
+      setTimeout(logTick, 1800);
+    }
+  }
+
+  /* ---- outlined ghost numerals on section headers ---- */
+  document.querySelectorAll('.section-header').forEach(function (header) {
+    var tagEl = header.querySelector('.section-tag');
+    var m = tagEl && /^\s*(\d\d)/.exec(tagEl.textContent);
+    if (m) { var g = el('span', 'section-ghost'); g.textContent = m[1]; header.appendChild(g); }
+  });
+
+  /* ---- project cards: one small motion graphic each ---- */
+  var svgOpen = '<svg viewBox="0 0 320 96" preserveAspectRatio="xMidYMid meet" focusable="false">';
+  var vizBuilders = [
+    function () { // legal RAG: scan the corpus, cite the articles
+      var s = '<path class="pv-l" d="M14 84H306"/>';
+      for (var i = 0; i < 6; i++) {
+        var x = 20 + 48 * i;
+        s += '<rect class="pv-s" x="' + x + '" y="24" width="34" height="48"/>' +
+             '<path class="pv-l" d="M' + (x + 6) + ' 36h22M' + (x + 6) + ' 46h22M' + (x + 6) + ' 56h14"/>' +
+             '<circle class="pv-cite pv-fx" cx="' + (x + 17) + '" cy="12" r="4" style="animation-delay:' + (0.3 + 0.66 * i).toFixed(2) + 's"/>';
+      }
+      return s + '<rect class="pv-scan" x="13" y="18" width="3" height="60"/>';
+    },
+    function () { // restaurant: floor map + orders to the kitchen
+      var s = '';
+      for (var r = 0; r < 2; r++) for (var c = 0; c < 5; c++) {
+        s += '<rect class="pv-table" x="' + (18 + 40 * c) + '" y="' + (16 + 40 * r) + '" width="28" height="24" style="animation-delay:' + (((r * 5 + c) * 1.7) % 6).toFixed(1) + 's"/>';
+      }
+      return s + '<rect class="pv-s" x="240" y="14" width="62" height="68"/>' +
+        '<path class="pv-ticket" d="M250 30h42"/><path class="pv-l" d="M250 44h42M250 56h30M250 68h36"/>' +
+        '<circle class="pv-order" cx="32" cy="48" r="4"/><circle class="pv-order" cx="32" cy="48" r="4" style="animation-delay:1.2s"/>';
+    },
+    function () { // receipts: ledger bars + verified receipt
+      var hts = [28, 44, 36, 58, 40, 66, 50], s = '<path class="pv-l" d="M14 84H210"/>';
+      for (var i = 0; i < hts.length; i++) {
+        s += '<rect class="pv-bar" x="' + (24 + 26 * i) + '" y="' + (84 - hts[i]) + '" width="14" height="' + hts[i] + '" style="animation-delay:' + (i * 0.25).toFixed(2) + 's"/>';
+      }
+      return s + '<rect class="pv-s" x="228" y="10" width="70" height="76"/>' +
+        '<path class="pv-l" d="M238 26h50M238 38h50M238 50h32"/><path class="pv-check" d="M246 68l10 9 22-20"/>';
+    },
+    function () { // condo: windows lighting up
+      var b = [[36, 26, 64, 58], [112, 40, 84, 44], [208, 16, 76, 68]], s = '<path class="pv-l" d="M14 84H306"/>', n = 0;
+      b.forEach(function (q) {
+        s += '<rect class="pv-s" x="' + q[0] + '" y="' + q[1] + '" width="' + q[2] + '" height="' + q[3] + '"/>';
+        for (var y = q[1] + 8; y + 8 < q[1] + q[3]; y += 14) for (var x = q[0] + 8; x + 8 < q[0] + q[2]; x += 14) {
+          s += '<rect class="pv-win" x="' + x + '" y="' + y + '" width="7" height="7" style="animation-delay:' + ((n++ * 37 % 60) / 10).toFixed(1) + 's"/>';
+        }
+      });
+      return s;
+    }
+  ];
+  document.querySelectorAll('.project-card').forEach(function (card, i) {
+    var head = card.querySelector('.project-card-header');
+    if (!head || !vizBuilders[i]) return;
+    var viz = el('div', 'project-viz', svgOpen + vizBuilders[i]() + '</svg>');
+    head.parentNode.insertBefore(viz, head.nextSibling);
+  });
+
   /* ============ MOBILE NAV ============ */
   var navToggle = document.getElementById('navToggle');
   var navLinks = document.getElementById('navLinks');
@@ -169,6 +324,7 @@
   /* ============ HERO: STARFIELD + 3D TILT ============ */
   var heroEl = document.querySelector('.hero');
   var mx = 0, my = 0; // shared mouse offset, -0.5..0.5
+  var mpx = -9999, mpy = -9999; // pointer position inside the hero (CSS px), off-screen when away
 
   var starsCanvas = document.querySelector('.hero-stars');
   if (starsCanvas && heroEl && starsCanvas.getContext) {
@@ -182,7 +338,7 @@
       starsCanvas.height = h * dpr;
       starsCanvas.style.width = w + 'px';
       starsCanvas.style.height = h + 'px';
-      var n = Math.min(130, Math.max(40, Math.floor(w / 11)));
+      var n = Math.min(210, Math.max(50, Math.floor(w / 7)));
       stars = [];
       for (var i = 0; i < n; i++) {
         var roll = Math.random();
@@ -207,10 +363,22 @@
           if (st.y < -4) { st.y = starsCanvas.height + 4; st.x = Math.random() * starsCanvas.width; }
         }
         var a = 0.2 + 0.4 * st.z + Math.sin(t / 700 * st.s + st.p) * 0.18;
+        var sx = st.x + mx * 26 * st.z * dpr, sy = st.y + my * 18 * st.z * dpr;
         ctx.beginPath();
-        ctx.arc(st.x + mx * 26 * st.z * dpr, st.y + my * 18 * st.z * dpr, st.r * st.z * dpr, 0, 6.2832);
+        ctx.arc(sx, sy, st.r * st.z * dpr, 0, 6.2832);
         ctx.fillStyle = 'rgba(' + st.c + ',' + Math.max(0.05, a).toFixed(3) + ')';
         ctx.fill();
+        if (mpx > -9000) { // constellation lines to the pointer
+          var dx = sx - mpx * dpr, dy = sy - mpy * dpr, d2 = dx * dx + dy * dy, R = 190 * dpr;
+          if (d2 < R * R) {
+            ctx.strokeStyle = 'rgba(0,180,216,' + ((1 - Math.sqrt(d2) / R) * 0.45).toFixed(3) + ')';
+            ctx.lineWidth = dpr;
+            ctx.beginPath();
+            ctx.moveTo(sx, sy);
+            ctx.lineTo(mpx * dpr, mpy * dpr);
+            ctx.stroke();
+          }
+        }
       }
       if (starsRunning && heroVisible && !document.hidden) requestAnimationFrame(drawStars);
     };
@@ -257,12 +425,13 @@
       var nx = (e.clientX - r.left) / r.width - 0.5;
       var ny = (e.clientY - r.top) / r.height - 0.5;
       mx = nx; my = ny;
+      mpx = e.clientX - r.left; mpy = e.clientY - r.top;
       tiltX = nx * 16;
       tiltY = -ny * 12;
       if (!tiltRaf) tiltRaf = requestAnimationFrame(tiltLoop);
     });
     heroEl.addEventListener('mouseleave', function () {
-      mx = 0; my = 0; tiltX = 0; tiltY = 0;
+      mx = 0; my = 0; tiltX = 0; tiltY = 0; mpx = -9999; mpy = -9999;
       if (!tiltRaf) tiltRaf = requestAnimationFrame(tiltLoop);
     });
   }
@@ -270,13 +439,6 @@
   /* ============ HERO: GLITCH + MECHA DRAW ============ */
   window.addEventListener('load', function () {
     if (reducedMotion) return;
-    var heroTitle = document.querySelector('.hero-title');
-    if (heroTitle) {
-      heroTitle.classList.add('glitch-active');
-      heroTitle.addEventListener('animationend', function () {
-        heroTitle.classList.remove('glitch-active');
-      }, { once: true });
-    }
     var mecha = document.querySelector('.hero-mecha');
     if (mecha) mecha.classList.add('mecha-draw');
   });
