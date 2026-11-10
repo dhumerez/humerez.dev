@@ -1122,19 +1122,19 @@ footer {
 .back-to-top:hover { background: var(--accent-red); color: var(--bg-primary); box-shadow: var(--glow-red); }
 
 /* === SCROLL REVEAL SYSTEM === */
-.reveal {
+.js .reveal {
   opacity: 0;
   transform: translateY(30px);
   transition: opacity 0.7s ease, transform 0.7s ease;
 }
-.reveal--left  { transform: translateX(-40px); }
-.reveal--right { transform: translateX(40px); }
-.reveal--clip {
+.js .reveal--left  { transform: translateX(-40px); }
+.js .reveal--right { transform: translateX(40px); }
+.js .reveal--clip {
   transform: none;
   clip-path: inset(0 100% 0 0);
   transition: opacity 0.7s ease, clip-path 0.9s cubic-bezier(0.6, 0, 0.2, 1);
 }
-.reveal.visible {
+.js .reveal.visible {
   opacity: 1;
   transform: none;
   clip-path: inset(0 0 0 0);
@@ -1144,23 +1144,23 @@ footer {
 .reveal-delay-3 { transition-delay: 0.3s; }
 .reveal-delay-4 { transition-delay: 0.35s; }
 /* stagger children */
-.stagger > * {
+.js .stagger > * {
   opacity: 0;
   transform: translateY(24px);
   transition: opacity 0.6s ease, transform 0.6s ease;
 }
-.stagger.visible > * { opacity: 1; transform: none; }
-.stagger.visible > *:nth-child(1)  { transition-delay: 0.05s; }
-.stagger.visible > *:nth-child(2)  { transition-delay: 0.1s; }
-.stagger.visible > *:nth-child(3)  { transition-delay: 0.15s; }
-.stagger.visible > *:nth-child(4)  { transition-delay: 0.2s; }
-.stagger.visible > *:nth-child(5)  { transition-delay: 0.25s; }
-.stagger.visible > *:nth-child(6)  { transition-delay: 0.3s; }
-.stagger.visible > *:nth-child(7)  { transition-delay: 0.35s; }
-.stagger.visible > *:nth-child(8)  { transition-delay: 0.4s; }
-.stagger.visible > *:nth-child(9)  { transition-delay: 0.45s; }
-.stagger.visible > *:nth-child(10) { transition-delay: 0.5s; }
-.stagger.visible > *:nth-child(n+11) { transition-delay: 0.55s; }
+.js .stagger.visible > * { opacity: 1; transform: none; }
+.js .stagger.visible > *:nth-child(1)  { transition-delay: 0.05s; }
+.js .stagger.visible > *:nth-child(2)  { transition-delay: 0.1s; }
+.js .stagger.visible > *:nth-child(3)  { transition-delay: 0.15s; }
+.js .stagger.visible > *:nth-child(4)  { transition-delay: 0.2s; }
+.js .stagger.visible > *:nth-child(5)  { transition-delay: 0.25s; }
+.js .stagger.visible > *:nth-child(6)  { transition-delay: 0.3s; }
+.js .stagger.visible > *:nth-child(7)  { transition-delay: 0.35s; }
+.js .stagger.visible > *:nth-child(8)  { transition-delay: 0.4s; }
+.js .stagger.visible > *:nth-child(9)  { transition-delay: 0.45s; }
+.js .stagger.visible > *:nth-child(10) { transition-delay: 0.5s; }
+.js .stagger.visible > *:nth-child(n+11) { transition-delay: 0.55s; }
 
 /* === GLITCH (hero title, once on load) === */
 @keyframes glitch-once {
@@ -1257,3 +1257,337 @@ a:focus-visible, button:focus-visible {
   .btn { width: 100%; text-align: center; }
   .back-to-top { bottom: 1rem; right: 1rem; }
 }
+
+/* ==========================================================================
+   v3 motion layer: hero boot-in, orbiting tech chips, cursor spotlight,
+   forward-deployed flow diagram. Transform/opacity only; reduced-motion safe.
+   ========================================================================== */
+
+/* === HERO BOOT-IN (staggered entrance; h1 keeps its own glitch) === */
+@keyframes hero-in {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: none; }
+}
+.js .hero-content > *:not(.hero-title) { animation: hero-in 0.7s cubic-bezier(0.16, 1, 0.3, 1) both; }
+.js .hero-content > .hero-label    { animation-delay: 0.05s; }
+.js .hero-content > .hero-role     { animation-delay: 0.15s; }
+.js .hero-content > .hero-subtitle { animation-delay: 0.25s; }
+.js .hero-content > .hero-ctas     { animation-delay: 0.35s; }
+.js .hero-content > .hero-stats    { animation-delay: 0.45s; }
+@keyframes mecha-in {
+  from { opacity: 0; transform: scale(0.94); }
+  to   { opacity: 1; transform: none; }
+}
+.js .hero-mecha { animation: mecha-in 1s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both; }
+
+/* === ORBITING TECH CHIPS (ride the dashed ring around the mecha) === */
+.mecha-orbit {
+  position: absolute;
+  width: 420px;
+  height: 420px;
+  pointer-events: none;
+}
+.mecha-orbit span {
+  --a: 0deg;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 46px;
+  height: 22px;
+  margin: -11px 0 0 -23px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 2px;
+  color: var(--accent-blue);
+  background: rgba(10,12,16,0.9);
+  border: 1px solid rgba(0,180,216,0.45);
+  transform: rotate(var(--a)) translateX(210px) rotate(calc(var(--a) * -1));
+  animation: chip-orbit 26s linear infinite;
+}
+.mecha-orbit span:nth-child(2) { --a: 120deg; color: var(--accent-gold); border-color: rgba(244,166,32,0.45); }
+.mecha-orbit span:nth-child(3) { --a: 240deg; color: var(--accent-red); border-color: rgba(230,57,70,0.45); }
+@keyframes chip-orbit {
+  from { transform: rotate(var(--a)) translateX(210px) rotate(calc(var(--a) * -1)); }
+  to   { transform: rotate(calc(var(--a) + 360deg)) translateX(210px) rotate(calc(var(--a) * -1 - 360deg)); }
+}
+
+/* === CURSOR SPOTLIGHT on cards (position set from JS via --mx/--my) === */
+.service-card, .project-card {
+  background-image: radial-gradient(340px circle at var(--mx, -999px) var(--my, -999px), rgba(0,180,216,0.10), transparent 62%);
+}
+
+/* === FORWARD DEPLOYED === */
+.fde-section {
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(0,180,216,0.05) 0%, transparent 55%),
+    var(--bg-primary);
+}
+.fde-flow {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 96px auto 96px minmax(0, 1fr);
+  align-items: center;
+  row-gap: 1.6rem;
+  margin-bottom: 4rem;
+}
+.fde-panel {
+  background: var(--bg-card);
+  border: 1px solid var(--panel-line);
+  padding: 1.6rem 1.5rem;
+  clip-path: polygon(0 0, calc(100% - 16px) 0, 100% 16px, 100% 100%, 16px 100%, 0 calc(100% - 16px));
+}
+.fde-panel--in  { border-left: 2px solid var(--accent-blue); }
+.fde-panel--out { border-right: 2px solid var(--accent-gold); }
+.fde-panel-label {
+  font-family: var(--font-display);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+.fde-chips { list-style: none; display: grid; gap: 0.55rem; }
+.fde-chips li {
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  letter-spacing: 0.5px;
+  color: var(--text-secondary);
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--panel-line);
+  position: relative;
+  overflow: hidden;
+}
+.fde-chips li::after {  /* sequential signal sweep */
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(0,180,216,0.22), transparent);
+  transform: translateX(-100%);
+  animation: chip-signal 4.8s ease-in-out infinite;
+}
+.fde-panel--out .fde-chips li::after {
+  background: linear-gradient(90deg, transparent, rgba(244,166,32,0.24), transparent);
+}
+.fde-chips li:nth-child(2)::after { animation-delay: 0.5s; }
+.fde-chips li:nth-child(3)::after { animation-delay: 1s; }
+.fde-chips li:nth-child(4)::after { animation-delay: 1.5s; }
+.fde-panel--out .fde-chips li:nth-child(1)::after { animation-delay: 2.4s; }
+.fde-panel--out .fde-chips li:nth-child(2)::after { animation-delay: 2.9s; }
+.fde-panel--out .fde-chips li:nth-child(3)::after { animation-delay: 3.4s; }
+.fde-panel--out .fde-chips li:nth-child(4)::after { animation-delay: 3.9s; }
+@keyframes chip-signal {
+  0%   { transform: translateX(-100%); }
+  18%  { transform: translateX(100%); }
+  100% { transform: translateX(100%); }
+}
+
+/* connectors with travelling packets */
+.fde-link {
+  position: relative;
+  height: 2px;
+  container-type: inline-size;
+  background: linear-gradient(90deg, rgba(0,180,216,0.15), rgba(0,180,216,0.55));
+}
+.fde-link--out { background: linear-gradient(90deg, rgba(244,166,32,0.55), rgba(244,166,32,0.15)); }
+.fde-link i {
+  position: absolute;
+  top: -3px;
+  left: -4px;
+  width: 8px;
+  height: 8px;
+  background: var(--accent-blue);
+  box-shadow: 0 0 10px rgba(0,180,216,0.8);
+  transform-origin: center;
+  opacity: 0;
+  animation: packet-x 2.4s linear infinite;
+}
+.fde-link--out i { background: var(--accent-gold); box-shadow: 0 0 10px rgba(244,166,32,0.8); }
+.fde-link i:nth-child(2) { animation-delay: 0.8s; }
+.fde-link i:nth-child(3) { animation-delay: 1.6s; }
+@keyframes packet-x {
+  0%   { transform: translateX(0) rotate(45deg); opacity: 0; }
+  12%  { opacity: 1; }
+  88%  { opacity: 1; }
+  100% { transform: translateX(100cqw) rotate(45deg); opacity: 0; }
+}
+@keyframes packet-y {
+  0%   { transform: translateY(0) rotate(45deg); opacity: 0; }
+  12%  { opacity: 1; }
+  88%  { opacity: 1; }
+  100% { transform: translateY(100cqh) rotate(45deg); opacity: 0; }
+}
+
+/* the embedded engineer */
+.fde-core {
+  position: relative;
+  width: 190px;
+  height: 190px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.fde-core svg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+.fde-hex {
+  fill: rgba(19,23,32,0.9);
+  stroke: rgba(230,57,70,0.35);
+  stroke-width: 1.5;
+}
+.fde-hex--energy {
+  fill: none;
+  stroke: var(--accent-red);
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-dasharray: 46 284;
+  filter: drop-shadow(0 0 6px rgba(230,57,70,0.8));
+  animation: hex-energy 3.2s linear infinite;
+}
+.fde-hex--inner {
+  fill: none;
+  stroke: rgba(0,180,216,0.35);
+  stroke-width: 1;
+  stroke-dasharray: 4 6;
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: ring-spin 18s linear infinite reverse;
+}
+@keyframes hex-energy { to { stroke-dashoffset: -330; } }
+.fde-core-title {
+  position: relative;
+  font-family: var(--font-display);
+  font-size: 1.7rem;
+  font-weight: 900;
+  letter-spacing: 3px;
+  color: var(--text-primary);
+  line-height: 1;
+}
+.fde-core-sub {
+  position: relative;
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  max-width: 110px;
+  margin-top: 0.5rem;
+  line-height: 1.4;
+}
+
+/* feedback loop back to the operation */
+.fde-loop {
+  grid-column: 1 / -1;
+  position: relative;
+  height: 34px;
+  margin: 0 12%;
+  border: 1px dashed rgba(155,173,196,0.28);
+  border-top: none;
+  container-type: inline-size;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+.fde-loop span {
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  background: var(--bg-primary);
+  padding: 0 0.9rem;
+  transform: translateY(50%);
+}
+.fde-loop i {
+  position: absolute;
+  bottom: -4px;
+  left: -3px;
+  width: 6px;
+  height: 6px;
+  background: var(--text-secondary);
+  opacity: 0;
+  animation: packet-x 5s linear infinite reverse;
+}
+.fde-loop i:nth-of-type(2) { animation-delay: 2.5s; }
+
+/* pause everything while the diagram is off-screen */
+.js .fde-flow:not(.in-view) *, .js .fde-flow:not(.in-view) *::after { animation-play-state: paused; }
+
+/* steps: a rail that charges left to right */
+.fde-steps {
+  list-style: none;
+  counter-reset: fde;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 2rem;
+}
+.fde-step {
+  counter-increment: fde;
+  position: relative;
+  padding-top: 1.4rem;
+  border-top: 2px solid var(--panel-line);
+}
+.fde-step::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent-red), var(--accent-gold));
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+  transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.fde-steps.visible .fde-step::before { transform: scaleX(1); }
+.fde-steps.visible .fde-step:nth-child(1)::before { transition-delay: 0.2s; }
+.fde-steps.visible .fde-step:nth-child(2)::before { transition-delay: 0.6s; }
+.fde-steps.visible .fde-step:nth-child(3)::before { transition-delay: 1s; }
+.fde-steps.visible .fde-step:nth-child(4)::before { transition-delay: 1.4s; }
+.fde-step h3 {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 0.6rem;
+}
+.fde-step h3::before {
+  content: counter(fde, decimal-leading-zero);
+  font-family: var(--font-mono);
+  font-weight: 400;
+  color: var(--accent-red);
+  margin-right: 0.7rem;
+}
+.fde-step p { color: var(--text-secondary); font-size: 0.95rem; }
+
+@media (prefers-reduced-motion: reduce) {
+  .fde-link i, .fde-loop i { opacity: 1; }
+  .fde-step::before { transform: scaleX(1); }
+  .mecha-orbit span { animation: none !important; }
+}
+@media (max-width: 1024px) {
+  .mecha-orbit { display: none; }
+  .fde-steps { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 900px) {
+  .fde-flow { grid-template-columns: 1fr; justify-items: center; row-gap: 0; }
+  .fde-panel { width: 100%; }
+  .fde-link {
+    width: 2px;
+    height: 56px;
+    container-type: size;
+    background: linear-gradient(180deg, rgba(0,180,216,0.15), rgba(0,180,216,0.55));
+  }
+  .fde-link--out { background: linear-gradient(180deg, rgba(244,166,32,0.55), rgba(244,166,32,0.15)); }
+  .fde-link i { top: -4px; left: -3px; animation-name: packet-y; }
+  .fde-core { margin: 0.4rem 0; }
+  .fde-loop { display: none; }
+}
+@media (max-width: 560px) {
+  .fde-steps { grid-template-columns: 1fr; gap: 1.6rem; }
+}
+
+/* keep nav labels on one line at the 1024px edge */
+.nav-links a { white-space: nowrap; }

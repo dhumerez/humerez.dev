@@ -1,0 +1,7 @@
+# sunimex.humerez.dev - Sunimex (battery sales and management system, behind login)
+# Served by the humerez.dev landing nginx through a Traefik route for
+# Host(sunimex.humerez.dev) && Path(/robots.txt). Source: github.com/dhumerez/humerez.dev
+
+User-agent: *
+Allow: /
+Disallow: /api/

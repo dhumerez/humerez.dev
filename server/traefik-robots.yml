@@ -1,0 +1,12 @@
+# Merge these routers into /opt/traefik/dynamic.yml under http.routers (file provider).
+# They send /robots.txt of the listed app subdomains to the landing nginx, which
+# answers with site/robots/<host>.txt. Adding an app = add its Host() here and a
+# file in site/robots/. Apps that ship their own robots.txt (legal.humerez.dev)
+# are deliberately NOT listed.
+    robots-apps:
+      rule: "(Host(`restaurant.humerez.dev`) || Host(`pagos.humerez.dev`) || Host(`seguros.humerez.dev`) || Host(`sunimex.humerez.dev`)) && Path(`/robots.txt`)"
+      entryPoints:
+        - websecure
+      service: landing@docker
+      priority: 1000
+      tls: {}

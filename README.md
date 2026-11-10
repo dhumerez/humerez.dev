@@ -15,7 +15,8 @@ site/                  ← everything that gets deployed (document root)
   assets/site.js       shared behavior (reveals, typewriter, counters, tilt, language)
   assets/og-image.png  social card (1200×630)
   assets/favicon.svg / apple-touch-icon.png · favicon.ico (root)
-  robots.txt           allows all crawlers + explicit AI crawler allowances
+  robots.txt           allows all crawlers + explicit AI crawler allowances; blocks QA paths
+  robots/<host>.txt    robots.txt for the app subdomains (see "robots.txt for the other apps")
   sitemap.xml          both language URLs with hreflang alternates
   llms.txt             AI-crawler summary of who/what/projects/contact
   404.html             themed error page
@@ -41,6 +42,17 @@ deploy.sh              server-side deploy (runs via the host webhook listener)
 - `robots.txt` explicitly allows GPTBot, ClaudeBot, PerplexityBot,
   Google-Extended, etc. `llms.txt` provides an LLM-friendly summary.
 - Semantic headings, real text content (no text-in-images), fast static pages.
+
+## robots.txt for the other apps
+
+The app subdomains on the same server (restaurant, pagos, seguros, sunimex) do not
+ship a robots.txt of their own. Instead of rebuilding each app for a text file, one
+Traefik router (`server/traefik-robots.yml`, merged into `/opt/traefik/dynamic.yml`)
+sends `Host(<app>) && Path(/robots.txt)` to this landing's nginx, which answers with
+`site/robots/<host>.txt` (`try_files /robots/$host.txt /robots.txt`). To cover a new
+app: add `site/robots/<host>.txt`, push, and add its `Host()` to the router rule.
+`legal.humerez.dev` serves its own robots.txt and is not routed here. QA copies live
+under `humerez.dev/<path>` and are disallowed in `site/robots.txt`.
 
 ## Deploys
 

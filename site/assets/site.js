@@ -59,6 +59,25 @@
     });
   }
 
+  /* ============ SECTION TAG DECODE (mono labels only — headings stay stable) ============ */
+  var GLYPHS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789#/<>';
+  var decodeText = function (el) {
+    var finalText = el.textContent;
+    var total = finalText.length, startT = null, duration = 300 + total * 22;
+    var frame = function (ts) {
+      if (!startT) startT = ts;
+      var p = Math.min((ts - startT) / duration, 1);
+      var shown = Math.floor(p * total), out = '';
+      for (var i = 0; i < total; i++) {
+        var ch = finalText.charAt(i);
+        out += (i < shown || ch === ' ' || ch === '/') ? ch : GLYPHS.charAt(Math.floor(Math.random() * GLYPHS.length));
+      }
+      el.textContent = p < 1 ? out : finalText;
+      if (p < 1) requestAnimationFrame(frame);
+    };
+    requestAnimationFrame(frame);
+  };
+
   /* ============ SCROLL REVEAL ============ */
   var revealEls = document.querySelectorAll('.reveal, .stagger');
   if ('IntersectionObserver' in window && !reducedMotion) {
@@ -66,6 +85,8 @@
       entries.forEach(function (entry) {
         if (entry.isIntersecting) {
           entry.target.classList.add('visible');
+          var tag = entry.target.classList.contains('section-tag') ? entry.target : entry.target.querySelector('.section-tag');
+          if (tag) decodeText(tag);
           revealObserver.unobserve(entry.target);
         }
       });
@@ -324,6 +345,33 @@
   /* ============ MARQUEE (seamless loop) ============ */
   var marqueeTrack = document.querySelector('.marquee-track');
   if (marqueeTrack) marqueeTrack.innerHTML += marqueeTrack.innerHTML;
+
+  /* ============ FORWARD-DEPLOYED FLOW: animate only while on screen ============ */
+  var fdeFlow = document.querySelector('.fde-flow');
+  if (fdeFlow) {
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(function (entries) {
+        fdeFlow.classList.toggle('in-view', entries[0].isIntersecting);
+      }, { threshold: 0.15 }).observe(fdeFlow);
+    } else {
+      fdeFlow.classList.add('in-view');
+    }
+  }
+
+  /* ============ CARD SPOTLIGHT (cursor-tracked glow) ============ */
+  if (window.matchMedia('(pointer: fine)').matches && !reducedMotion) {
+    document.querySelectorAll('.service-card, .project-card').forEach(function (card) {
+      card.addEventListener('mousemove', function (e) {
+        var r = card.getBoundingClientRect();
+        card.style.setProperty('--mx', (e.clientX - r.left) + 'px');
+        card.style.setProperty('--my', (e.clientY - r.top) + 'px');
+      });
+      card.addEventListener('mouseleave', function () {
+        card.style.removeProperty('--mx');
+        card.style.removeProperty('--my');
+      });
+    });
+  }
 
   /* ============ PROJECT CARDS: tilt + click ============ */
   var finePointer = window.matchMedia('(pointer: fine)').matches;

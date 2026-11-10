@@ -1,23 +1,24 @@
 # Diego Humerez — humerez.dev
 
-> Diego Humerez is an AI & full-stack software engineer based in La Paz, Bolivia (GMT-4). He builds retrieval-augmented generation (RAG) systems, LLM agents and document intelligence, plus production web applications with .NET, React, TypeScript, Python and FastAPI. He works in English and Spanish and is available for freelance projects and remote roles across the US, Europe and Latin America.
+> Diego Humerez is a software developer and forward deployed AI engineer (AI implementer) based in La Paz, Bolivia (GMT-4). He embeds with client teams to implement AI in production, and builds retrieval-augmented generation (RAG) systems, LLM agents and document intelligence, plus production web applications with .NET, React, TypeScript, Python and FastAPI. He works in English and Spanish and is available for freelance projects and remote roles across the US, Europe and Latin America.
 
 Key facts:
+- Works as a forward deployed engineer (FDE): embedded with the client's team, he maps the operation, builds the AI or software solution on the client's real data and systems, ships it to production and tunes it with usage metrics. Process: embed, prototype on real data, production, operate.
 - Solution provider for businesses: custom web applications, business systems (point-of-sale, inventory, admin platforms), process automation, and AI-first products (RAG assistants, LLM agents, chatbots, document intelligence). Serves Bolivia and Latin America (in Spanish) and the US and Europe (in English), fully remote.
-- Available for hire as a software developer, AI developer and automation consultant — based in La Paz, Bolivia; serving Latin America and remote worldwide. Engagement: free scoping call, then a fixed-scope proposal or hourly work; replies within 24 hours (humerezdiego1994@gmail.com).
-- Flagship project: Asesor Legal IA (https://legal.humerez.dev) — a production legal-AI platform for Bolivian law. Grounded RAG over 9 legal codes and 4,170+ articles; every answer cites the exact article with links to official sources.
+- Available for hire as a software developer, forward deployed engineer, AI implementation engineer and automation consultant — based in La Paz, Bolivia; serving Latin America and remote worldwide. Engagement: free scoping call, then a fixed-scope proposal or hourly work; replies within 24 hours (humerezdiego1994@gmail.com).
+- Flagship project: Asesor Legal IA (https://legal.humerez.dev) — a production legal-AI platform for Bolivian law. Grounded RAG over 27 legal codes and laws, 7,600+ articles; every answer cites the exact article with links to official sources.
 - Other live products: Restaurant Hub (https://restaurant.humerez.dev/login) — real-time restaurant operations with Bolivian SIN tax integration; Debt & Receipts Tracker (https://pagos.humerez.dev/login) — debt ledger with digital receipt storage.
-- Services offered: AI agents & RAG systems (Python, FastAPI, vector databases, Claude/GPT/DeepSeek APIs); full-stack web apps (.NET/C#, React, TypeScript, PostgreSQL); cloud/DevOps & automation (Docker, Traefik, GitHub Actions, Linux VPS).
+- Services offered: forward deployed AI implementation; AI agents & RAG systems (Python, FastAPI, vector databases, Claude/GPT/DeepSeek APIs); full-stack web apps (.NET/C#, React, TypeScript, PostgreSQL); cloud/DevOps & automation (Docker, Traefik, GitHub Actions, Linux VPS).
 - Experience: 5+ years shipping software, including remote work for US companies and SaaS for Latin American businesses.
 - Languages: Spanish (native), English (fluent).
 - Contact: humerezdiego1994@gmail.com · https://github.com/dhumerez · https://www.linkedin.com/in/diego-humerez
 
-En español: Diego Humerez desarrolla software a medida y soluciones con IA para empresas de Bolivia y Latinoamérica — aplicaciones web, sistemas para negocios, automatización de procesos y asistentes con inteligencia artificial (RAG, agentes LLM, chatbots). Con base en La Paz, Bolivia; trabajo 100% remoto; respuesta en menos de 24 horas.
+En español: Diego Humerez es desarrollador de software e implementador de IA (forward deployed engineer): se integra al equipo del cliente y lleva la IA a producción. Desarrolla software a medida y soluciones con IA para empresas de Bolivia y Latinoamérica — aplicaciones web, sistemas para negocios, automatización de procesos y asistentes con inteligencia artificial (RAG, agentes LLM, chatbots). Con base en La Paz, Bolivia; trabajo 100% remoto; respuesta en menos de 24 horas.
 
 ## Pages
 
-- [Portfolio (English)](https://humerez.dev/): About, services, tech stack, featured projects and contact.
-- [Portafolio (Español)](https://humerez.dev/es/): Sobre mí, servicios, stack tecnológico, proyectos destacados y contacto.
+- [Portfolio (English)](https://humerez.dev/): About, services, forward deployed process, tech stack, featured projects and contact.
+- [Portafolio (Español)](https://humerez.dev/es/): Sobre mí, servicios, proceso forward deployed, stack tecnológico, proyectos destacados y contacto.
 
 ## Projects
 

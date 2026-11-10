@@ -1,0 +1,7 @@
+# pagos.humerez.dev - Rastreador de Recibos (debt and receipts tracker, behind login)
+# Served by the humerez.dev landing nginx through a Traefik route for
+# Host(pagos.humerez.dev) && Path(/robots.txt). Source: github.com/dhumerez/humerez.dev
+
+User-agent: *
+Allow: /
+Disallow: /api/

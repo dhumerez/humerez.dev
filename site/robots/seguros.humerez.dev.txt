@@ -1,0 +1,7 @@
+# seguros.humerez.dev - Insurance assistant (behind login)
+# Served by the humerez.dev landing nginx through a Traefik route for
+# Host(seguros.humerez.dev) && Path(/robots.txt). Source: github.com/dhumerez/humerez.dev
+
+User-agent: *
+Allow: /
+Disallow: /api/

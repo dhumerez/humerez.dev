@@ -1,0 +1,7 @@
+# restaurant.humerez.dev - Restaurant Hub (restaurant operations app, behind login)
+# Served by the humerez.dev landing nginx through a Traefik route for
+# Host(restaurant.humerez.dev) && Path(/robots.txt). Source: github.com/dhumerez/humerez.dev
+
+User-agent: *
+Allow: /
+Disallow: /api/
